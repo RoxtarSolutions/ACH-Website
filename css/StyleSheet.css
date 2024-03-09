@@ -27,8 +27,7 @@ header img{
   overflow: auto;
 }
 .header-nav h1{
-  margin: 0.75%;
-  left: 2%;
+  margin: 11px 22.2px;
   font-family: Bebas Neue, sans-serif;
   font-style: normal;
   font-size: 48px;
@@ -112,7 +111,7 @@ footer .col:last-child{
   margin-left: 7.5%;
   background-color: #ffffffad;
   color: black;
-padding:20px 20px;
+  padding:20px 20px;
   word-break: break-word;
   border-radius: 10px;
 }
@@ -140,14 +139,23 @@ padding:20px 20px;
   margin-top: 0;
   margin-bottom: 2.5%;
 }
-.tt-content .row{
-  padding:0 5%;
-  height: fit-content;
+
+.tt-content .video-frames .row{
+  padding:0;
+  justify-content: center;
 }
-.tt-content iframe{
-  height: 235px;
+.tt-content .row .card{
+  width: 32%;
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  margin: 0;
+  padding:0 30px;
 }
-.tt-content .description{
+.tt-content .row .card iframe{
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+.tt-content .row .card p{
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -166,6 +174,9 @@ padding:20px 20px;
   text-transform: uppercase;
 }
 
+.sub-content .card-body{
+  min-height: 73vh;
+}
 .wrapper{
   display: flex;
   justify-content: center;
@@ -263,4 +274,26 @@ padding:20px 20px;
 .store-content hr{
   margin-top: 0;
   margin-bottom: 2.5%;
+}
+
+.store-content .item-frames .row{
+  padding:0;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+.store-content .row .card{
+  width: 20%;
+  margin: 0 10px;
+  padding:0 0;
+}
+.store-content .row .card img{
+  padding-top: 10px;
+  width: 100%;
+}
+.store-content .row .card p{
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding:5px 5%;
 }
