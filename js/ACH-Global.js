@@ -1,5 +1,6 @@
 $(document).ready(function () {
   init();
+  populate_video();
   populate_store();
 });
 
@@ -25,6 +26,19 @@ function sub_toggle_work(){
   $('#WorkshopPackages').show();
 }
 
+function populate_video(){
+  let videoFrame = document.querySelector('.video-frames');
+  videoFrame.innerHTML = null;
+
+  videos.forEach(video => {
+    let newVideo = document.createElement('div');
+    newVideo.classList.add('item');
+    newVideo.innerHTML =
+        ` <iframe src="${video.url}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <h2>${video.description}</h2>`;
+    videoFrame.appendChild(newVideo);
+  });
+}
 function populate_store(){
   let listProductHTML = document.querySelector('.listProduct');
   listProductHTML.innerHTML = null;

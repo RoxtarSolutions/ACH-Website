@@ -84,3 +84,41 @@ const products=[
         "description":"These car mats have an anti-slip design with heavy nibbed backing to keep them securely in place. They are stain resistant and easy to install and maintain. The mats are waterproof and easy to clean with a hose. They come in a fashion and sporty color and are perfect for most sedans, crossovers, SUVs, trucks, and vans. The dimensions are engineered to fit most cars, trucks, vans, and SUVs."
     },
 ]
+const videos=[
+    {
+        "url":"https://www.youtube.com/embed/H9-YT9RiM84?enablejsapi=1",
+        "description":"How to check your dipstick for engine oil."
+    },
+    {
+        "url":"https://www.youtube.com/embed/3UpyixFMaH4?enablejsapi=1",
+        "description":"How to Jack Up Your Car (The Right Way)"
+    },
+    {
+        "url":"https://www.youtube.com/embed/0Q-Eb7aUyt4?enablejsapi=1",
+        "description":"How to Properly inflate you Tires on Your Car"
+    },
+    {
+        "url":"https://www.youtube.com/embed/BjX79GsALd8?enablejsapi=1",
+        "description":"10 Things Every Car Owner Should Know"
+    },
+    {
+        "url":"https://www.youtube.com/embed/Y3jcQCdeJAs?enablejsapi=1",
+        "description":"How To Make Your Car Last A Long Time"
+    },
+    {
+        "url":"https://www.youtube.com/embed/GaKKSFEsAdI?enablejsapi=1",
+        "description":"Simple Car Maintenance to Prevent Expensive Repairs"
+    },
+    {
+        "url":"https://www.youtube.com/embed/qFbNHGjtDnw?enablejsapi=1",
+        "description":"How To Detail (And Sanitize) Your ENTIRE CAR"
+    },
+    {
+        "url":"https://www.youtube.com/embed/WBxqiUhadyY?enablejsapi=1",
+        "description":"9 Things You\'ll REGRET Not Doing to Your Car"
+    },
+    {
+        "url":"https://www.youtube.com/embed/ik_HElMb5n0?enablejsapi=1",
+        "description":"How to Pick BETTER Wheels & Tires for YOUR Car"
+    },
+]

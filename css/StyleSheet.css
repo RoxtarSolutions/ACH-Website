@@ -145,28 +145,35 @@ footer .col:last-child{
   margin-bottom: 2.5%;
 }
 
-.tt-content .video-frames .row{
-  padding:0;
-  justify-content: center;
+.tt-content .video-frames{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
-.tt-content .row .card{
-  width: 32%;
-  background-color: rgba(255, 0, 0, 0);
-  border: none;
-  margin: 0;
-  padding:0 30px;
+.tt-content .video-frames .item{
+  padding: 20px;
+  width: fit-content;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
-.tt-content .row .card iframe{
+.tt-content .video-frames .item iframe{
   width: 100%;
-  aspect-ratio: 3/2;
+  aspect-ratio: 1280/720;
+  filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.38));
+  margin-right: auto;
+  margin-left: auto;
 }
-.tt-content .row .card p{
+.tt-content .video-frames .item h2{
   font-family: Poppins, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
-  padding:5px 5%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 
 /*Subscription*/
 .card-header ul{
