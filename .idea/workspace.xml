@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/ACH-Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/b_lugnut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/fm_beige.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/fm_black.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/fm_grey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/fm_red.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/s_lugnut.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/ti_wired.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Store/ti_wireless.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
-    </list>
+    <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +36,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/priya/Downloads/add_cart_v4-main",
+    "last_opened_file_path": "C:/Users/priya/OneDrive - Conestoga College/Capstone Project/ACH-Website",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,6 +70,7 @@
       <workItem from="1709930575485" duration="5133000" />
       <workItem from="1709941370411" duration="666000" />
       <workItem from="1709960307017" duration="14799000" />
+      <workItem from="1709978198836" duration="166000" />
     </task>
     <servers />
   </component>
