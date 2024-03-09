@@ -5,17 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/js/ACH-Products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/b_lugnut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/fm_beige.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/fm_black.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/fm_grey.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/fm_red.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/s_lugnut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/ti_wired.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Store/ti_wireless.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +50,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/priya/Desktop/Others/Sem Fall2023/Mobile Application/RideOn App",
+    "last_opened_file_path": "C:/Users/priya/Downloads/add_cart_v4-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +83,7 @@
       <workItem from="1709925810420" duration="4340000" />
       <workItem from="1709930575485" duration="5133000" />
       <workItem from="1709941370411" duration="666000" />
+      <workItem from="1709960307017" duration="14799000" />
     </task>
     <servers />
   </component>
