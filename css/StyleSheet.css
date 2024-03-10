@@ -293,13 +293,14 @@ footer .col:last-child{
     margin-right: 25px;
 }
 .store-content .icon-cart svg{
-  width: 35px;
+  width: 30px;
 }
 .store-content .icon-cart span{
   position: absolute;
   background-color: rgb(255, 0, 0);
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+  font-size:16px;
   display: flex;
   justify-content: center;
   align-items: center;
