@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ACH-Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Const.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/OneDrive - Conestoga College/Capstone Project/ACH-Website&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/Downloads/add_cart_v4-main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,7 +76,8 @@
       <workItem from="1709941370411" duration="666000" />
       <workItem from="1709960307017" duration="14799000" />
       <workItem from="1709978198836" duration="166000" />
-      <workItem from="1710014775923" duration="4183000" />
+      <workItem from="1710014775923" duration="17759000" />
+      <workItem from="1710050114534" duration="10109000" />
     </task>
     <servers />
   </component>
