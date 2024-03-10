@@ -290,23 +290,23 @@ footer .col:last-child{
   position: relative;
     margin-top: auto;
     margin-bottom: auto;
-  margin-right: 25px;
+    margin-right: 25px;
 }
 .store-content .icon-cart svg{
-  width: 30px;
+  width: 35px;
 }
-.store-content  .icon-cart span{
+.store-content .icon-cart span{
   position: absolute;
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #fff;
-  top: 50%;
-  right: -7.5px;
+  color: #ffffff;
+  top: -50%;
+  margin-left:20px
 }
 
 .store-content hr{
