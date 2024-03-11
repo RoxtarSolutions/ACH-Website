@@ -478,36 +478,68 @@ background-color: #2c1b1b;;
   width: 68%;
 }
 
-/*Login Page*/
-#LoginPage section{
+/*Login Page and Registration Page*/
+#LoginPage section, #RegistrationPage section{
   background-image: url("../Images/Login-bg.jpg");
   background-size: cover;
 }
-.login_content .frmdiv{
+.form_content h1{
+  font-weight: bold;
+}
+.form_content .frmdiv{
   color: black;
   text-shadow: none;
+  font-family: Poppins, sans-serif;
   margin-top: 16vh;
   margin-bottom: 18vh;
   background-color: rgba(255, 255, 255, 0.75);
 }
-#frmLogin label{
+.form_content label{
   font-weight: bold;
 }
-#frmLogin input[type=checkbox]{
+.form_content input[type=checkbox]{
   display: none;
 }
-#frmLogin .form-check-label{
+.form_content .form-check-label{
   background-color: transparent;
   border: none;
   font-weight: bold;
   text-shadow: none;
 }
-.login_content .frmdiv p a{
+.form_content .frmdiv p a, .form-check-label a{
   color: midnightblue;
 }
-.login_content .frmdiv p a:hover{
+.form_content .frmdiv p a:hover, .form-check-label a{
   color: #007bff;
 }
+.form_content .frmdiv button{
+  background-color: #0e6d4b;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 400;
+  border-color: transparent;
+}
+.form_content .frmdiv button:hover{
+  background-color: #39a47a;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 400;
+  border-color: transparent;
+}
+.form_content .frmdiv button:focus{
+  background-color: whitesmoke;
+  color: black;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 400;
+  border-color: transparent;
+}
+
+
+
+
 @media only screen and (max-width: 992px) {
   .tt-content .video-frames{
     grid-template-columns: repeat(2, 1fr);

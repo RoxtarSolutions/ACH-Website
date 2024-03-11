@@ -6,7 +6,40 @@
   <component name="ChangeListManager">
     <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Login-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Login-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/cjs/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/cjs/index.d.cts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/cjs/sync.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/cjs/sync.d.cts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/esm/sync.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/esm/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/iife/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/iife/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/umd/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/dist/umd/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/api/CsvError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/api/init_state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/api/normalize_columns_array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/api/normalize_options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/sync.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/utils/ResizeableBuffer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/utils/is_object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/lib/utils/underscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parse/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +55,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -45,7 +81,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.sourceCode.HTTP Request",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,7 +113,7 @@
       <workItem from="1710014775923" duration="17759000" />
       <workItem from="1710050114534" duration="12774000" />
       <workItem from="1710106751115" duration="5028000" />
-      <workItem from="1710113206524" duration="6297000" />
+      <workItem from="1710113206524" duration="15794000" />
     </task>
     <servers />
   </component>
