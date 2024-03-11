@@ -4,7 +4,7 @@ function errorHandler(error){
     console.error("SQL error: " + error.message);
 }
 
-var DB = {
+var db = {
     createDatabase : function(){
         var dbName = "ACH-DB";
         var version = "1.0";
@@ -19,29 +19,31 @@ var DB = {
     },
     createTable: function(){
         dbOpen.transaction(function(tx){
-            var stateQuery = "CREATE TABLE if NOT EXISTS state(" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                "name VARCHAR(20) NOT NULL);"
 
-            var reviewQuery = "CREATE TABLE if NOT EXISTS  restaurant( " +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,  " +
-                "Name VARCHAR(30) NOT NULL,  " +
-                "B_Id VARCHAR(20) NOT NULL, " +
-                "stateId INTEGER NOT NULL, " +
-                "R_Email VARCHAR(30), " +
-                "R_Comments TEXT,  " +
-                "hasRating VARCHAR(1),  " +
-                "fq_rating INTEGER,  " +
-                "s_rating INTEGER,  " +
-                "v_rating INTEGER,  " +
-                "FOREIGN KEY(stateId) REFERENCES state(id));"
+            var usersTable = "CREATE TABLE if NOT EXISTS  users( " +
+                "user_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,  " +
+                "username VARCHAR(30) NOT NULL,  " +
+                "password VARCHAR(20) NOT NULL, " +
+                "email INTEGER NOT NULL, " +
+                "address VARCHAR(30), " +
+                "phone_number VARCHAR(20) NOT NULL;";
+
+            var vehiclesTable = "CREATE TABLE vehicles ( "
+                "vehicle_id INT AUTO_INCREMENT PRIMARY KEY, " +
+                "user_id INT, " +
+                "make VARCHAR(50) NOT NULL, " +
+                "model VARCHAR(50) NOT NULL, " + 
+                "year INT, " +
+                "color VARCHAR(100) NOT NULL, " +
+                "license VARCHAR(100) NOT NULL, " +
+                "FOREIGN KEY (user_id) REFERENCES users(user_id);";
 
             function success() {
                 console.info("Tables created successfully");
             }
 
-            tx.executeSql(stateQuery, [],success, errorHandler);
-            tx.executeSql(reviewQuery, [], success, errorHandler);
+            tx.executeSql(usersTable, [],success, errorHandler);
+            tx.executeSql(vehiclesTable, [], success, errorHandler);
 
         });
     }
