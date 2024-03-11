@@ -1,5 +1,6 @@
 $(document).ready(function () {
   init();
+  initDb();
   populate_video();
   populate_store();
   cart();
@@ -11,6 +12,22 @@ function init() {
   $('#WorkshopPackages').hide();
   $('.cartTab').hide();
   $('.icon-cart').on('click', enable_cart);
+}
+function initDb(){
+  try{
+    DB.createDatabase();
+    if(dbOpen){
+      console.info("DB Open");
+      // DB.createTable();
+      // states.insertData();
+    }
+    else{
+      console.error("Error while creating the database");
+    }
+  }
+  catch (error){
+    console.error("ERRORS"+error);
+  }
 }
 
 function sub_toggle_user(){
@@ -28,7 +45,6 @@ function sub_toggle_work(){
   $('#MechanicPackages').hide();
   $('#WorkshopPackages').show();
 }
-
 function populate_video(){
   let videoFrame = document.querySelector('.video-frames');
   videoFrame.innerHTML = null;
@@ -63,7 +79,6 @@ function populate_store(){
     listProductHTML.appendChild(newProduct);
   });
 }
-
 function enable_cart(){
   let container = document.querySelector('.store-content')
   $('.cartTab').toggle(200);

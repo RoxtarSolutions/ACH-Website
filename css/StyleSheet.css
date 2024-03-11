@@ -16,14 +16,16 @@ textarea.error {
 header{
   position: relative;
 }
-header img{
+header .acc_icon{
+  width: fit-content;
   height: fit-content;
   position: absolute;
   float: right;
-  padding:3px 0;
-  top: 0 ;
+  margin-top: auto;
+  margin-bottom: auto;
   right: 7.5%;
 }
+
 .header-nav{
   position: relative;
   margin-top: 28px;
@@ -101,7 +103,7 @@ footer .col:last-child{
 
 /*HomePage CSS*/
 .hp-content{
-  background-image: url('../Images/HP_Background.jpg');
+  background-image: url('../Images/HP-bg.jpg');
   height: 80vh;
   background-size: cover;
   margin: 0;
@@ -291,6 +293,7 @@ footer .col:last-child{
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 25px;
+  cursor: pointer;
 }
 .store-content .icon-cart svg{
   width: 30px;
@@ -307,7 +310,8 @@ footer .col:last-child{
   border-radius: 50%;
   color: #ffffff;
   top: -50%;
-  margin-left:20px
+  margin-left:20px;
+  -webkit-user-select: none;
 }
 
 .store-content hr{
@@ -474,6 +478,36 @@ background-color: #2c1b1b;;
   width: 68%;
 }
 
+/*Login Page*/
+#LoginPage section{
+  background-image: url("../Images/Login-bg.jpg");
+  background-size: cover;
+}
+.login_content .frmdiv{
+  color: black;
+  text-shadow: none;
+  margin-top: 16vh;
+  margin-bottom: 18vh;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+#frmLogin label{
+  font-weight: bold;
+}
+#frmLogin input[type=checkbox]{
+  display: none;
+}
+#frmLogin .form-check-label{
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  text-shadow: none;
+}
+.login_content .frmdiv p a{
+  color: midnightblue;
+}
+.login_content .frmdiv p a:hover{
+  color: #007bff;
+}
 @media only screen and (max-width: 992px) {
   .tt-content .video-frames{
     grid-template-columns: repeat(2, 1fr);
