@@ -536,7 +536,9 @@ background-color: #2c1b1b;;
   font-weight: 400;
   border-color: transparent;
 }
-
+#frmRegister .col:first-child{
+  margin-right:5%;
+}
 
 
 

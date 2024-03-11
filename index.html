@@ -460,8 +460,8 @@
   </header>
   <section data-role="content" style="padding: 0">
     <div class="container form_content">
-      <div class="align-items-center justify-content-center">
-        <div class="rounded p-4 shadow-lg frmdiv">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-sm-8 rounded p-5 shadow-lg frmdiv">
           <div class="row text-center justify-content-center mb-4">
             <h1>Registration</h1>
           </div>
@@ -483,12 +483,21 @@
                 <label for="register-phone" class="form-label">Phone</label>
                 <input type="text" class="form-control" id="register-phone" aria-describedby="emailHelp">
               </div>
+            </div>
+            <div class="col">
               <div class="mb-4">
-                <label for="login-pswd" class="form-label">Password</label>
+                <label for="register-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="register-username" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-4">
+                <label for="register-confirmpswd" class="form-label">Password</label>
                 <input type="password" class="form-control" id="register-pswd">
               </div>
+              <div class="mb-4">
+                <label for="register-confirmpswd" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="register-confirmpswd">
+              </div>
             </div>
-            <div class="col"><!--empty--></div>
             <div class="row align-items-center justify-content-center">
               <button type="button" class="w-25">Register</button>
             </div>
