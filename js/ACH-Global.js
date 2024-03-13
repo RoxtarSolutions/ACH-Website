@@ -35,6 +35,7 @@ function resetValidation(){
   $('.validator').hide();
   $('.frmdiv input').removeClass('error').removeClass('valid');
   $('.frmdiv form')[0].reset();
+  $('#frmRegister')[0].reset();
 }
 function sub_toggle_user(){
   $('#UserPackages').show();

@@ -62,7 +62,7 @@ function frmregister_Validation(){
     let phoneRegex = new RegExp(/\d{10}$/);
     let pswdRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_])(?=.{8,}$)");
     let required = "Required";
-    let pswdFormat = "Password should contain at least<br>one digit,<br>none lower case,<br>one upper case,<br>( ! @ # $ % & * _ ) <br>any of the 8 special characters mentioned";
+    let pswdFormat = "Password should contain at least<br>one digit,<br>one lower case,<br>one upper case,<br>( ! @ # $ % & * _ ) <br>any of the 8 special characters mentioned";
     let valid = true;
 
     let fname = $('#registerFname').val();

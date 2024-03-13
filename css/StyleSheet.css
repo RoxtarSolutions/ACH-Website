@@ -555,6 +555,22 @@ background-color: #2c1b1b;;
   margin-left:1%;
 }
 
+/*UserPage*/
+.up-content{
+  height : 80vh;
+  border-top: 5px solid black;
+}
+.menubar{
+  border-right: 5px solid black;
+}
+.userSetting h1{
+  display:inline;
+}
+.userSetting svg {
+  display:inline;
+}
+
+
 @media only screen and (max-width: 992px) {
   .tt-content .video-frames{
     grid-template-columns: repeat(2, 1fr);
