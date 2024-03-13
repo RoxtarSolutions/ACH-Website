@@ -18,10 +18,10 @@ function init() {
 }
 function initDb(){
   try{
-    DB.createDatabase();
+    db.createDatabase();
     if(dbOpen){
       console.info("DB Open");
-      // DB.createTable();
+      db.createTable();
       // states.insertData();
     }
     else{
