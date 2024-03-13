@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="" />
+    <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Facade.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Facade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Validations.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +87,10 @@
       <workItem from="1710106751115" duration="5028000" />
       <workItem from="1710113206524" duration="18886000" />
       <workItem from="1710150390294" duration="78000" />
+      <workItem from="1710190606131" duration="8948000" />
+      <workItem from="1710217834515" duration="1703000" />
+      <workItem from="1710268124749" duration="3342000" />
+      <workItem from="1710275825499" duration="13922000" />
     </task>
     <servers />
   </component>
