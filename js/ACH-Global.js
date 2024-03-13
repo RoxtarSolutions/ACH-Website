@@ -21,7 +21,7 @@ function initDb(){
     db.createDatabase();
     if(dbOpen){
       console.info("DB Open");
-      db.createTable();
+      // db.createTable();
       // states.insertData();
     }
     else{
