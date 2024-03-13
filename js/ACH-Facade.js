@@ -92,3 +92,22 @@ const cart = () => {
     }
     initApp();
 }
+
+function User_Login(){
+        frmlogin_Validation()
+}
+function User_registration(){
+    if(frmregister_Validation()){
+        let FirstName = $("#registerFname").val();
+        let LastName = $("#registerLname").val();
+        let Email = $("#registerEmail").val();
+        let Phone = $("#registerPhone").val();
+        let Username = $("#registerUsername").val();
+        let Password = $("#registerPswd").val();
+        var userData = new User(FirstName, LastName, Email, Phone, Username, Password);
+        userdb.insertData(userData);
+        $.mobile.changePage($('#LoginPage'));
+    }else{
+        console.log("Form not valid");
+    }
+}

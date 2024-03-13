@@ -12,33 +12,30 @@ function init() {
   $('#WorkshopPackages').hide();
   $('.cartTab').hide();
   $('.icon-cart').on('click', enable_cart);
-  $('#btnLogin').on('click', frmlogin_Validation);
-  $('#btnRegister').on('click', frmregister_Validation);
+  $('#btnLogin').on('click', User_Login);
+  $('#btnRegister').on('click', User_registration);
   $('body').on('pageshow', resetValidation);
 }
 function initDb(){
   try{
-    db.createDatabase();
-    if(dbOpen){
-      console.info("DB Open");
-      // db.createTable();
-      // states.insertData();
+    DB.createDatabase();
+    if(db){
+      DB.createTables();
     }
     else{
-      console.error("Error while creating the database");
+      console.error("Error while opening the database");
     }
   }
   catch (error){
-    console.error("ERRORS"+error);
+    console.error("ERRORS :"+error);
   }
 }
 
 function resetValidation(){
   $('.validator').hide();
-  $('.frmdiv input').removeClass('error');
+  $('.frmdiv input').removeClass('error').removeClass('valid');
   $('.frmdiv form')[0].reset();
 }
-
 function sub_toggle_user(){
   $('#UserPackages').show();
   $('#MechanicPackages').hide();
@@ -90,6 +87,6 @@ function populate_store(){
 }
 function enable_cart(){
   let container = document.querySelector('.store-content')
-  $('.cartTab').toggle(200);
+  $('.cartTab').toggle(250);
   container.classList.toggle('activeTabCart')  ;
 }

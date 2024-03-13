@@ -1,3 +1,4 @@
+// Const for webpage
 const products=[
     {
         "id": 1,
@@ -122,3 +123,13 @@ const videos=[
         "description":"How to Pick BETTER Wheels & Tires for YOUR Car"
     },
 ]
+
+// Const for DB
+var User = function(FirstName,LastName,Email,Phone,Username,Password) {
+    this.FirstName = FirstName;
+    this.LastName = LastName;
+    this.Email = Email;
+    this.Phone = Phone;
+    this.Username = Username;
+    this.Password = Password;
+}

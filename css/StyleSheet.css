@@ -9,6 +9,9 @@ input[type=number]::-webkit-inner-spin-button{
 input.error{
   border : solid darkred;
 }
+input.valid{
+  border : solid darkgreen;
+}
 
 /* Header CSS */
 header{
