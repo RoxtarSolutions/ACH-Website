@@ -14,6 +14,8 @@ function init() {
   $('.icon-cart').on('click', enable_cart);
   $('#btnLogin').on('click', User_Login);
   $('#btnRegister').on('click', User_registration);
+  $('#tt-search').on('input',search_tt);
+  $('#store-search').on('input',search_store);
   $('body').on('pageshow', resetValidation);
 }
 function initDb(){
@@ -59,6 +61,7 @@ function populate_video(){
   videos.forEach(video => {
     let newVideo = document.createElement('div');
     newVideo.classList.add('item');
+    newVideo.id = `${video.description}`;
     newVideo.innerHTML =
         ` <iframe src="${video.url}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
             <h2>${video.description}</h2>`;
@@ -72,12 +75,13 @@ function populate_store(){
   products.forEach(product => {
     let newProduct = document.createElement('div');
     newProduct.classList.add('item');
+    newProduct.id =`${product.name}`;
     newProduct.innerHTML =
         `<a href="./detail.html?id=${product.id}">
              <img src="${product.image}">
          </a>
          <h2>${product.name}</h2>
-         <div class="price">$${product.price}</div>
+         <p class="price">$${product.price}</p>
          <button 
              class="addCart" 
              data-id='${product.id}'>

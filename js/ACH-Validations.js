@@ -1,5 +1,4 @@
 const required = "Required *";
-
 function frmlogin_Validation(){
     let username = $('#loginUsername').val();
     let options = [username];

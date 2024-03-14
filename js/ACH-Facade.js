@@ -93,6 +93,29 @@ const cart = () => {
     initApp();
 }
 
+function search_tt(){
+    var value = $(this).val().toLowerCase();
+    $('.video-frames div').each( function(){
+        var divId = $(this).attr('id');
+        if (divId.toLowerCase().indexOf(value) !== -1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    })
+}
+function search_store(){
+    var value = $(this).val().toLowerCase();
+    $('.listProduct div').each( function(){
+        var divId = $(this).attr('id');
+        if (divId.toLowerCase().indexOf(value) !== -1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    })
+}
+
 function User_Login(){
         frmlogin_Validation()
 }
