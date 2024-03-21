@@ -125,14 +125,6 @@ footer .col:last-child{
   word-break: break-word;
   border-radius: 10px;
 }
-.homebodylink a{
-  color:black;
-  text-decoration: none;
-}
-.homebodylink a:hover{
-  color: #9a2828;
-  text-decoration: none;
-}
 
 /*Tips & Tricks CSS*/
 .tt-content .row:first-child{
@@ -219,6 +211,7 @@ footer .col:last-child{
   box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
   3px 3px 10px -1px rgba(255,255,255,0.7);
 }
+
 .wrapper .card ul{
   list-style: none;
   padding:0;
@@ -276,6 +269,30 @@ footer .col:last-child{
 .wrapper .card:hover{
   background-color: rgba(59, 59, 59, 0.06);
   transform: scale(1, 1.09);
+}
+
+/*handles the styling for the different cards inside the home page.*/
+.wrapperHome{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+.wrapperHome .homecard{
+  max-width: 300px;
+  background-color: #ffffff7a;
+  font-family: Poppins, sans-serif;
+  padding: 10px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
+  3px 3px 10px -1px rgba(255,255,255,0.7);
+}
+.wrapperHome .homecard img{
+  max-width: 250px;
+  max-height: 50%;
 }
 
 /*Store*/
