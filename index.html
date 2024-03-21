@@ -383,7 +383,13 @@
           <h5 class="col">SubTotal : </h5>
           <h5 class="col-md-auto"></h5>
         </div>
-        <button class="checkOut">Check Out</button>
+        <button id="checkOut" onclick="navigateToCheckout()">Check Out</button>
+
+        <script>
+          function navigateToCheckout() {
+            window.location.href = "#CheckoutPage";
+          }
+        </script>
       </div>
   </section>
   <footer data-role="footer" data-position="relative" data-theme="b">
@@ -437,7 +443,13 @@
         <h5 class="col">SubTotal : </h5>
         <h5 class="col-md-auto"></h5>
       </div>
-      <button class="checkOut">Check Out</button>
+      <button id="checkOut" onclick="navigateToCheckout()">Check Out</button>
+
+        <script>
+          function navigateToCheckout() {
+            window.location.href = "#CheckoutPage";
+          }
+        </script>
     </div>
   </section>
   <footer data-role="footer" data-position="relative" data-theme="b">
@@ -660,6 +672,129 @@
       <div class="car_history">Information about car history based on above selected car.</div>
     </div>
   </section>
+  <footer data-role="footer" data-position="relative" data-theme="b">
+    <div class="row">
+      <div class="footer-text col align-items-center">
+        <h1>AUTOCARE HUB</h1>
+        <p>&copy; 2024, AutoCare Hub is built and managed by Roxtar Solutions</p>
+      </div>
+      <div class="sm_icon col">
+        <img src="css/lib/images/Instagram.png" />
+        <img src="css/lib/images/Facebook.png" />
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<div id="CheckoutPage" data-role="page">
+  <header data-role="header" data-position="relative" data-theme="b">
+    <div class="acc_icon">
+      <a href="#LoginPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+    </div>
+    <div class="header-nav row">
+      <h1 class="col">AUTOCARE HUB</h1>
+      <div class="navigation col">
+        <ul>
+          <li><a href="#HomePage">Home</a></li>
+          <span>|</span>
+          <li><a href="#TTPage">Tips & Tricks</a></li>
+          <span>|</span>
+          <li><a href="#Subscription">Subscription</a></li>
+          <span>|</span>
+          <li><a href="#Store">Store</a></li>
+          <span>|</span>
+          <li><a href="#MechNearMe">Mech Near Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section data-role="content" style="padding: 20px" class="checkoutColumn">
+    <div class="container checkout-content ">
+        <h2>Checkout</h2>
+        <form action="" class="form_Checkout" method="post">
+            <fieldset id="P_Info" class="mb-4">
+                <legend>Personal Information</legend>
+                <div class="mb-4">
+                    <label for="fullname" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" id="fullname" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            </fieldset>
+            <fieldset id="S_info" class="mb-4">
+                <legend>Shipping Address</legend>
+                <div class="mb-4">
+                    <label for="address1" class="form-label">Address Line 1 *</label>
+                    <input type="text" class="form-control" id="address1" required>
+                </div>
+                <div class="mb-4">
+                    <label for="address2" class="form-label">Address Line 2</label>
+                    <input type="text" class="form-control" id="address2">
+                </div>
+                <div class="mb-4">
+                    <label for="city" class="form-label">City *</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="mb-4">
+                    <label for="state" class="form-label">State/Province/Region *</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+                <div class="mb-4">
+                    <label for="zip" class="form-label">ZIP/Postal Code *</label>
+                    <input type="text" class="form-control" id="zip" required>
+                </div>
+                <div class="mb-4">
+                    <label for="country" class="form-label">Country *</label>
+                    <select name="country" id="country" class="form-control" required>
+                        <option value="">Select a country...</option>
+                        <!-- Add options for countries -->
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset id="P_Details">
+                <legend>Payment Details</legend>
+                <div class="mb-4">
+                    <label for="cardName" class="form-label">Name on Card *</label>
+                    <input type="text" class="form-control" name="cardName" id="cardName" required>
+                </div>
+                <div class="mb-4">
+                    <label for="cardNumber" class="form-label">Card Number *</label>
+                    <input type="text" class="form-control" name="cardNumber" id="cardNumber" required pattern="\\d*">
+                </div>
+                <div class="mb-4">
+                    <label for="expMonth" class="form-label">Expiry Month *</label>
+                    <select name="expMonth" id="expMonth" class="form-control" required>
+                        <option value="">Month</option>
+                        <!-- Add options for months -->
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="expYear" class="form-label">Expiry Year *</label>
+                    <select name="expYear" id="expYear" class="form-control" required>
+                        <option value="">Year</option>
+                        <!-- Add options for years -->
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="cvv" class="form-label">CVV *</label>
+                    <input type="text" class="form-control" name="cvv" id="cvv" required pattern="\\d{3,4}">
+                </div>
+            </fieldset>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+              
+                <div class="subtotal">
+              
+                </div>
+            </div>
+            <button type="submit" class="checkOut">Complete Purchase</button>
+        </form>
+    </div>
+</section>
+
   <footer data-role="footer" data-position="relative" data-theme="b">
     <div class="row">
       <div class="footer-text col align-items-center">
