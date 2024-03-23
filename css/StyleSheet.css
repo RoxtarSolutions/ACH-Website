@@ -700,36 +700,53 @@ background-color: #2c1b1b;;
 
 
 
-/* Checkout Page CSS */
-
+/* CheckOut Page CSS */
 .checkout-content {
-  background-color: #f9f9f9;
+  /* background-color: #ffffffad; */
+  background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: auto;
-  width: 100%;
-  max-width: 800px;
-  }
-
-/* .checkoutColumn{
-  background-image: url('../Images/Checkout\ Background1.jpeg');
+  width: calc(100% - 40px); 
+  max-width: 1200px;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+.checkoutColumn{
+  background-image: url('../Images/HP-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
+  
+}
 
-} */
+
+.column {
+  flex: 1;
+  margin: 0 10px; 
+  max-width: calc(50% - 40px); 
+}
 
 fieldset {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px 20px;
+  border: 2px solid #060606;
+  padding: 20px;
   border-radius: 5px;
+}
+#leftForm{
+  margin-top: 48px;
+}
+
+#cvv{
+  height: 62px;
 }
 
 legend {
   font-weight: bold;
-  color: #333;
+  color: #0b0b0b;
 }
 
 label {
@@ -744,98 +761,85 @@ input[type="password"],
 select {
   width: 100%;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button.checkOut {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button.checkOut:hover {
+  background-color: #45a049;
+}
+
+.order-summary {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.order-summary h3, .subtotal span {
+  font-weight: bold;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.inline-form-group {
+  display: flex; 
+  gap: 20px; 
+}
+
+
+.inline-form-group > div {
+  flex: 1;
+  min-width: 0; 
+}
+
+.inline-form-group select,
+.inline-form-group input {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .checkout-content {
+    width: auto; 
+    padding: 15px;
+  }
+
+  .column {
+    flex-basis: 100%;
+    margin: 10px 0; 
+    max-width: none; 
+  }
+
+  .inline-form-group {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  .inline-form-group > div {
+    width: 100%; 
+  }
+
+  fieldset {
+    padding: 15px;
+  }
   
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box; 
 }
 
-button.checkOut {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-button.checkOut:hover {
-  background-color: #45a049;
-}
-
-.order-summary {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #fff;
-  margin-top: 20px;
-}
-
-.order-summary h3, .subtotal span {
-  font-weight: bold;
-}
-
-.subtotal {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .checkout-content {
-    padding: 15px;
-  }
-
-  fieldset {
-    padding: 10px;
-  }
-}
-
-}
-
-button.checkOut {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-button.checkOut:hover {
-  background-color: #45a049;
-}
-
-.order-summary {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #fff;
-  margin-top: 20px;
-}
-
-.order-summary h3, .subtotal span {
-  font-weight: bold;
-}
-
-.subtotal {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .checkout-content {
-    padding: 15px;
-  }
-
-  fieldset {
-    padding: 10px;
-  }
-}
