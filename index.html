@@ -54,9 +54,47 @@
             <p>
               Autocare Hub is your one-stop shop for advice on all your vehicle
               maintenance needs. Keep track of your vehicles upkeep, look for
-              new ways to save money, and contact mechanics all from this
+              new ways to save money on vehicle maintenance, and contact mechanics all from this
               website.
             </p>
+            <div class="card-body">
+              <div class="wrapperHome">
+                <div class="homecard">
+                  <img src="Images/carIcon.png" alt="user image" style="width:100%">
+                  <div class="container">
+                    <h4><b>Drivers</b></h4>
+                    <p>	The basic user profile allows you to track your vehicles in your profile. 
+                      You can record what work has been done to your vehicle and any details about 
+                      the vehicle that you want to provide and then system will prompt you to do basic 
+                      maintenance tasks automatically based on that information. As a user, you can use 
+                      the “get quote” page inside the profile page to send your ticket out to the wider 
+                      market of mechanics and then choose the quote that best matches your expectations.</p>
+                  </div>
+                </div> 
+                <div class="homecard">
+                  <img src="Images/wrenchIcon.png" alt="mechanic image" style="width:100%">
+                  <div class="container">
+                    <h4><b>Mechanics</b></h4>
+                    <p>The mechanic profile is a special type of user profile that can provide specific support for users’ 
+                      vehicles. As a mechanic, you can provide quotes to users based on the information they provide you, 
+                      bid for specific quotes requests, view your list of jobs for the day, and notify customers about 
+                      upcoming maintenance needs for their vehicles.</p>
+                  </div>
+                </div> 
+                <div class="homecard">
+                  <img src="Images/workshopIcon.png" alt="workshop image" style="width:100%">
+                  <div class="container">
+                    <h4><b>Workshops</b></h4>
+                    <p>	The workshop profile is catered to businesses that want to implement the AutoCare Hub at the 
+                      company level. Many of the features can be changed to better suit a company’s approach to car 
+                      maintenance. Please contact us for details.</p>
+                  </div>
+                </div> 
+              </div>
+              
+            </div>
+            
+
           </div>
         </div>
       </section>
@@ -170,7 +208,7 @@
             <div class="card">
               <h3>User Package 1</h3>
               <h1>Free <span></span></h1>
-              <p>For Most Buisness that want to optimize their web queries.</p>
+              <p>For Most Business that want to optimize their web queries.</p>
               <ul>
                 <li><i class="fa-solid fa-square-check"></i> All limited links</li>
                 <li>
@@ -364,7 +402,13 @@
           <h5 class="col">SubTotal : </h5>
           <h5 class="col-md-auto"></h5>
         </div>
-        <button class="checkOut">Check Out</button>
+        <button id="checkOut" onclick="navigateToCheckout()">Check Out</button>
+
+        <script>
+          function navigateToCheckout() {
+            window.location.href = "#CheckoutPage";
+          }
+        </script>
       </div>
   </section>
   <footer data-role="footer" data-theme="b">
@@ -411,16 +455,6 @@
       <hr>
       <div class="listProduct">
       </div>
-    </div>
-    <div class="cartTab">
-      <h1>Shopping Cart</h1>
-      <div class="listCart">
-      </div>
-      <div class="subtotal row">
-        <h5 class="col">SubTotal : </h5>
-        <h5 class="col-md-auto"></h5>
-      </div>
-      <button class="checkOut">Check Out</button>
     </div>
   </section>
   <footer data-role="footer" data-theme="b">
@@ -773,6 +807,133 @@
         <h1>AUTOCARE HUB</h1>
       </div>
       <div class="col">
+        <p>&copy; 2024, AutoCare Hub is built and managed by Roxtar Solutions</p>
+      </div>
+      <div class="sm_icon col">
+        <img src="css/lib/images/Instagram.png" />
+        <img src="css/lib/images/Facebook.png" />
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div id="CheckoutPage" data-role="page">
+  <header data-role="header" data-position="relative" data-theme="b">
+    <div class="acc_icon">
+      <a href="#LoginPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+    </div>
+    <div class="header-nav row">
+      <h1 class="col">AUTOCARE HUB</h1>
+      <div class="navigation col">
+        <ul>
+          <li><a href="#HomePage">Home</a></li>
+          <span>|</span>
+          <li><a href="#TTPage">Tips & Tricks</a></li>
+          <span>|</span>
+          <li><a href="#Subscription">Subscription</a></li>
+          <span>|</span>
+          <li><a href="#Store">Store</a></li>
+          <span>|</span>
+          <li><a href="#MechNearMe">Mech Near Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section data-role="content" style="padding: 20px" class="checkoutColumn">
+    <div class="container checkout-content">
+        <!-- Column for Personal Information and Shipping Address -->
+        <div class="column">
+            <h2>Checkout</h2>
+            <form action="" class="form_Checkout" method="post">
+                <!-- Personal Information -->
+                <fieldset id="P_Info" class="mb-4">
+                    <legend>Personal Information</legend>
+                    <div class="mb-4">
+                        <label for="fullname" class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="fullname" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </fieldset>
+                <!-- Shipping Address -->
+                <fieldset id="S_info" class="mb-4">
+                    <legend>Shipping Address</legend>
+                    <div class="mb-4">
+                        <label for="address1" class="form-label">Address Line 1 *</label>
+                        <input type="text" class="form-control" id="address1" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="address2" class="form-label">Address Line 2</label>
+                        <input type="text" class="form-control" id="address2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="city" class="form-label">City *</label>
+                        <input type="text" class="form-control" id="city" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="state" class="form-label">State/Province/Region *</label>
+                        <input type="text" class="form-control" id="state" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="zip" class="form-label">ZIP/Postal Code *</label>
+                        <input type="text" class="form-control" id="zip" required>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- Column for Payment Details -->
+        <div class="column">
+            <form action="" class="form_Checkout" id="leftForm" method="post">
+                <!-- Payment Details -->
+                <fieldset id="P_Details">
+                    <legend>Payment Details</legend>
+                    <div class="mb-4">
+                        <label for="cardName" class="form-label">Name on Card *</label>
+                        <input type="text" class="form-control" name="cardName" id="cardName" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="cardNumber" class="form-label">Card Number *</label>
+                        <input type="text" class="form-control" name="cardNumber" id="cardNumber" required pattern="\\d*">
+                    </div>
+                    <div class="inline-form-group">
+                      <div>
+                        <label for="expMonth" class="form-label">Expiry Month *</label>
+                        <select name="expMonth" id="expMonth" class="form-control" required>
+                          <option value="">Month</option>
+                          <!-- Add options for months -->
+                        </select>
+                      </div>
+                      <div>
+                        <label for="expYear" class="form-label">Expiry Year *</label>
+                        <select name="expYear" id="expYear" class="form-control" required>
+                          <option value="">Year</option>
+                          <!-- Add options for years -->
+                        </select>
+                      </div>
+                      <div>
+                        <label for="cvv" class="form-label">CVV *</label>
+                        <input type="text" class="form-control" name="cvv" id="cvv" required pattern="\\d{3,4}">
+                      </div>
+                    </div>
+                </fieldset>
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <!-- Details of the order summary -->
+                </div>
+                <button type="submit" class="checkOut">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+  <footer data-role="footer" data-position="relative" data-theme="b">
+    <div class="row">
+      <div class="footer-text col align-items-center">
+        <h1>AUTOCARE HUB</h1>
         <p>&copy; 2024, AutoCare Hub is built and managed by Roxtar Solutions</p>
       </div>
       <div class="sm_icon col">

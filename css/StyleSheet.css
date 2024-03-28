@@ -213,6 +213,7 @@ footer .row .col:last-child{
   box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
   3px 3px 10px -1px rgba(255,255,255,0.7);
 }
+
 .wrapper .card ul{
   list-style: none;
   padding:0;
@@ -272,6 +273,30 @@ footer .row .col:last-child{
   transform: scale(1, 1.09);
 }
 
+/*handles the styling for the different cards inside the home page.*/
+.wrapperHome{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+.wrapperHome .homecard{
+  max-width: 300px;
+  background-color: #ffffff7a;
+  font-family: Poppins, sans-serif;
+  padding: 10px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
+  3px 3px 10px -1px rgba(255,255,255,0.7);
+}
+.wrapperHome .homecard img{
+  max-width: 250px;
+  max-height: 50%;
+}
+
 /*Store*/
 .store-content{
   margin-bottom: 5%;
@@ -317,6 +342,7 @@ footer .row .col:last-child{
   color: #ffffff;
   top: -50%;
   margin-left:20px;
+  user-select:none;
   -webkit-user-select: none;
 }
 
@@ -435,6 +461,7 @@ background-color: #2c1b1b;;
   text-align: center;
   margin-top:5px;
   margin-bottom:5px;
+  user-select:none;
   -webkit-user-select: none;
 }
 #Store section .cartTab .listCart .item .row img{
@@ -697,3 +724,179 @@ background-color: #2c1b1b;;
       display: none;
     }
   }
+/* mobile */
+@media only screen and (max-width: 767px) {
+  .tt-content .video-frames{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .store-content .listProduct{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detail{
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+  .detail .image img{
+    width: unset;
+    height: 40vh;
+  }
+  .detail .name{
+    font-size: x-large;
+    margin: 0;
+
+  }
+  .detail .buttons button{
+    font-size: small;
+  }
+  .detail .buttons{
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+/* CheckOut Page CSS */
+.checkout-content {
+  /* background-color: #ffffffad; */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: calc(100% - 40px); 
+  max-width: 1200px;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+.checkoutColumn{
+  background-image: url('../Images/HP-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+}
+
+
+.column {
+  flex: 1;
+  margin: 0 10px; 
+  max-width: calc(50% - 40px); 
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: 2px solid #060606;
+  padding: 20px;
+  border-radius: 5px;
+}
+#leftForm{
+  margin-top: 48px;
+}
+
+#cvv{
+  height: 62px;
+}
+
+legend {
+  font-weight: bold;
+  color: #0b0b0b;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button.checkOut {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button.checkOut:hover {
+  background-color: #45a049;
+}
+
+.order-summary {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.order-summary h3, .subtotal span {
+  font-weight: bold;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.inline-form-group {
+  display: flex; 
+  gap: 20px; 
+}
+
+
+.inline-form-group > div {
+  flex: 1;
+  min-width: 0; 
+}
+
+.inline-form-group select,
+.inline-form-group input {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .checkout-content {
+    width: auto; 
+    padding: 15px;
+  }
+
+  .column {
+    flex-basis: 100%;
+    margin: 10px 0; 
+    max-width: none; 
+  }
+
+  .inline-form-group {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  .inline-form-group > div {
+    width: 100%; 
+  }
+
+  fieldset {
+    padding: 15px;
+  }
+  
+}
