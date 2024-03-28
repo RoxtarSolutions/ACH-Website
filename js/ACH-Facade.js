@@ -141,17 +141,41 @@ function LogOut(){
     $.mobile.changePage($('#LoginPage'));
 }
 function addODODetails(){
-    let ODO = $('#addODO').val();
-    let ODOrow = document.querySelector('#ODOrow');
-    if(ODOrow == null){
-        let Details = document.querySelector('#tblAddDetails tbody');
-        Details.innerHTML += `<tr id="ODOrow"><th scope="row">ODO</th><td>${ODO} KM</td></tr>`;
-        $('#addODO').addClass('valid');
-    }else{
-        ODOrow.innerHTML = `<th scope="row">ODO</th><td>${ODO} KM</td>`;
-        $('#addODO').addClass('valid');
-    }
+    let addODO = $('#addODO');
 
+    addODO.removeClass('error').removeClass('valid');
+    $('.validator').hide();
+
+    let vin = $('#addVIN').val().toUpperCase();
+    let ODO = addODO.val();
+    let Details = document.querySelector('#tblAddDetails tbody');
+    let ODOrow = document.querySelector('#ODOrow');
+    let regexp = /^\d{8}$/;
+
+    if(vin!=="" &&  ODO===""){
+        document.querySelector('#addODOValid').innerHTML='Required';
+        addODO.addClass('error');
+        $('#addODOValid').show();
+        if(Details.contains(ODOrow)){
+            Details.removeChild(ODOrow);
+        }
+    }else if(regexp.test(ODO)){
+        document.querySelector('#addODOValid').innerHTML='Invalid Input';
+        addODO.addClass('error');
+        $('#addODOValid').show();
+        if(Details.contains(ODOrow)){
+            Details.removeChild(ODOrow);
+        }
+    }else{
+        if(ODOrow == null){
+            Details.innerHTML += `<tr id="ODOrow"><th scope="row">ODO</th><td>${ODO} KM</td></tr>`;
+            addODO.addClass('valid');
+        }else{
+            ODOrow.innerHTML = `<th scope="row">ODO</th><td>${ODO} KM</td>`;
+            addODO.addClass('valid');
+        }
+    }
+    WTire();
 }
 function ModDetails(){
     let mods = $('#addMod').val();
@@ -208,7 +232,7 @@ async function addVINDetails(){
                  <th scope="row">Year</th>
                  <td>${data.years[0].year}</td>
              </tr>
-            <tr>
+             <tr>
                  <th scope="row">Make</th>
                  <td>${data.make.name}</td>
              </tr>
@@ -220,15 +244,15 @@ async function addVINDetails(){
                  <th scope="row">Body</th>
                  <td>${data.categories.vehicleStyle}</td>
              </tr>
-              <tr>
+             <tr>
                  <th scope="row">Engine</th>
                  <td>${data.engine.size}L ${data.engine.configuration}-${data.engine.cylinder} cylinder, ${data.engine.compressorType}</td>
              </tr>
-              <tr>
+             <tr>
                  <th scope="row">Horsepower</th>
                  <td>${data.engine.horsepower}</td>
              </tr>
-              <tr>
+             <tr>
                  <th scope="row">Torque</th>
                  <td>${data.engine.torque}</td>
              </tr>
@@ -236,7 +260,7 @@ async function addVINDetails(){
                  <th scope="row">Transmission</th>
                  <td>${data.transmission.numberOfSpeeds} speed, ${data.transmission.transmissionType}</td>
              </tr>
-              <tr>
+             <tr>
                  <th scope="row">Drivetrain</th>
                  <td>${data.drivenWheels.charAt(0).toUpperCase() + data.drivenWheels.slice(1)}</td>
              </tr>
@@ -247,9 +271,31 @@ async function addVINDetails(){
         `;
         Details.appendChild(vehicle);
     }
+    return vehicleFound;
+}
+function WTire(){
+    let No = $('#addWTNo').prop('checked');
+    let Yes = $('#addWTYes').prop('checked');
+    let Details = document.querySelector('#tblAddDetails tbody');
+    let WTire = document.querySelector('#WTire');
+
+
+    if(Details.contains(WTire)){
+            Details.removeChild(WTire);
+    }else{
+
+        if(WTire == null){
+
+        }
+        if(No){
+            Details.innerHTML += `<tr id="WTire"><th scope="row">Winter Tire</th><td>No</td></tr>`;
+        }else{
+            Details.innerHTML += `<tr id="WTire"><th scope="row">Winter Tire</th><td>Yes</td></tr>`;
+        }
+    }
 }
 function AddVehicle(){
-    $('.validator').removeClass('error').removeClass('valid');
+    $('.validator').hide();
 
     let vinValid = document.querySelector('#addVinValid');
     let ODOValid = document.querySelector('#addODOValid');
@@ -265,6 +311,9 @@ function AddVehicle(){
         ODOValid.innerHTML='Required';
         $('#addODO').addClass('error');
         $('#addODOValid').show();
+    }
+    if(document.querySelector('#addVIN').classList.contains('valid')&&document.querySelector('#addODO').classList.contains('valid')){
+        console.log('lets do this');
     }
 }
 function btnVehicleCancel(){
