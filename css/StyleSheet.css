@@ -2,9 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+section{
+  min-height: calc(100vh - 20.65vh);
+}
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button{
   -webkit-appearance: none;
+}
+input[type=file]::file-selector-button{
+  display:none
 }
 input.error{
   border : solid darkred;
@@ -14,9 +21,6 @@ input.valid{
 }
 
 /* Header CSS */
-header{
-  position: relative;
-}
 header .acc_icon{
   width: fit-content;
   height: fit-content;
@@ -26,7 +30,9 @@ header .acc_icon{
   margin-bottom: auto;
   right: 7.5%;
 }
-
+.acc_icon a img{
+  max-height:21.6px;
+}
 .header-nav{
   position: relative;
   margin-top: 28px;
@@ -86,28 +92,28 @@ header .acc_icon{
 footer .row{
   margin: 1%;
 }
-footer h1{
+footer .row h1{
   font-family: Bebas Neue, sans-serif;
   font-style: normal;
   font-size: 40px;
   color: white;
-  display: inline;
+  margin-top: auto;
+  margin-bottom: auto;
 }
-footer p{
-  display: inline;
-  padding-left: 2%;
+footer .row .col p{
+  text-align: left;
 }
-footer .col:last-child{
+
+footer .row .col:last-child{
   text-align: right;
   padding-right: 2%;
   margin-top: auto;
-  margin-bottom:auto;
+  margin-bottom: auto;
 }
 
 /*HomePage CSS*/
-.hp-content{
+#HomePage section{
   background-image: url('../Images/HP-bg.jpg');
-  height: 80vh;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -190,10 +196,6 @@ footer .col:last-child{
   font-size: 24px;
   text-shadow: none;
   text-transform: uppercase;
-}
-
-.sub-content .card-body{
-  min-height: 73vh;
 }
 .wrapper{
   display: flex;
@@ -415,9 +417,6 @@ background-color: #2c1b1b;;
   margin-left: auto;
   margin-right: auto;
 }
-#Store section .cartTab .subtotal{
-
-}
 #Store section .cartTab .subtotal h5:first-child{
   text-align: right;
   color: #e7bb0e;
@@ -482,6 +481,7 @@ background-color: #2c1b1b;;
   width: 68%;
 }
 
+
 /*Login Page and Registration Page*/
 #LoginPage section, #RegistrationPage section{
   background-image: url("../Images/Login-bg.jpg");
@@ -493,9 +493,9 @@ background-color: #2c1b1b;;
 .form_content .frmdiv{
   color: black;
   text-shadow: none;
+  margin-top:10vh;
+  margin-bottom:10vh;
   font-family: Poppins, sans-serif;
-  margin-top: 16vh;
-  margin-bottom: 18vh;
   background-color: rgba(255, 255, 255, 0.75);
 }
 .form_content label{
@@ -503,18 +503,6 @@ background-color: #2c1b1b;;
 }
 .form_content input[type=checkbox]{
   display: none;
-}
-.form_content .form-check-label{
-  background-color: transparent;
-  border: none;
-  font-weight: bold;
-  text-shadow: none;
-}
-.form_content .frmdiv p a, .form-check-label a{
-  color: midnightblue;
-}
-.form_content .frmdiv p a:hover, .form-check-label a{
-  color: #007bff;
 }
 .form_content .frmdiv button{
   background-color: #0e6d4b;
@@ -557,113 +545,155 @@ background-color: #2c1b1b;;
 
 /*UserPage*/
 .up-content{
-  height : 80vh;
-  border-top: 5px solid black;
+  min-height: calc(100vh - 20.65vh);
 }
-.menubar{
-  border-right: 5px solid black;
-}
-.userSetting h1{
-  display:inline;
-}
-.userSetting svg {
-  display:inline;
-}
-/*testing */
-
-
-.main_container .sidebar {
-  position: fixed;
-  width: 225px;
-  height: 100%;
-  background-color: #ffffffad;
-  border-color: black;
-  border-style: solid;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 1px;
-}
-.main_container .sidebar ul li {
-  list-style-type: none;
+.up-content .menubar{
+  text-align: center;
+  background-color: #1d1d1d;
+  border-right: 3px solid #1D1D1D;
+  padding:0;
   margin: 0;
-  padding-right: 37px;
-  padding-bottom: 10px;
-  padding-top: 10px;
 }
-.main_container .sidebar ul li button {
-  border-radius: 25px;
-  background-color: white;
+.menubar h1{
+  color: #9a2828;
+  text-shadow: none;
+  font-family: Bebas Neue, sans-serif;
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-size: 46px;
+  margin:20px 0;
 }
-.main_container .sidebar h1 {
+.up-nav{
+  margin:2vh 2vw;
+}
+.up-nav div{
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  padding:20px 0 20px 0;
+  font-size: 24px ;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-shadow: none;
+  font-family: Bebas Neue, sans-serif;
+  cursor: pointer;
+}
+.up-nav div:hover p{
+  color: #9a2828;
+}
+.up-nav div:hover img{
+  height:40px
+}
+.up-nav div img{
+  height:30px;
+}
+.up-content .col:last-child h1{
+  padding-top: 25px;
+  padding-left: 50px;
+  color: #2d1b1b;
+  font-family:  Lexend Deca, sans-serif;
+  font-weight: bold;
+  text-shadow: none;
+
+}
+.op-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 50px;
+  margin-bottom:50px;
+}
+.op-content .card{
+  margin-top: 50px;
+  font-family: Poppins, sans-serif;
+  filter: drop-shadow(0 5px 5px black);
+  cursor: pointer;
+}
+.op-content .card:hover{
+  transform: scale(1.025,1.025);
+  filter: drop-shadow(0 5px 5px #9a2828);
+}
+.op-content .card img{
+ aspect-ratio: 3/2;
+}
+.card-title{
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+.card-text{
+  font-weight: 600;
+  padding:4px 0;
+  margin:0;
+}
+#btnAddVehicle{
+  margin-left:50px;
+  margin-top:10px;
+}
+#frmAddVehicle{
+  padding:2vh 2vw;
+  margin:0;
   color: black;
-  font-size: 16px;
-  padding: 10px;
+  text-shadow: none;
+  font-family: Poppins, sans-serif;
 }
-.main_user {
-  margin-left: 225px; /* Same as the width of the sidenav */
-  padding: 0px 50px;
+#frmAddVehicle label{
+  font-weight: bold;
 }
-.main_user_underline {
-  width: 100%;
-  border-style: solid;
-  border-color: black;
-  border-bottom: 1px;
-  border-width: 1px;
-  align-self: center;
+#frmAddVehicle input[type=file]{
+  cursor: pointer;
 }
-.main_user h1 {
-  font-size: 25px;
+#AddVehicleDetails{
+  padding:2vh 2vw;
+  margin:0;
+  color: black;
+  text-shadow: none;
+  font-family: Poppins, sans-serif;
 }
-.car_history {
-  font-size: 40px;
+#AddVehicleDetails h3{
+  text-align: center;
+  font-weight: bold;
 }
-
-.user_settings {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  right: 92%;
-  top: 20%;
-  overflow: visible;
+#frmAddVehicle .validator{
+  text-align: right;
 }
 
-
-@media only screen and (max-width: 992px) {
-  .tt-content .video-frames{
-    grid-template-columns: repeat(2, 1fr);
+  @media only screen and (max-width: 992px) {
+    .tt-content .video-frames{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wrapper{
+      flex-direction: row;
+    }
+    .store-content .listProduct{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .store-content .detail{
+      grid-template-columns:  40% 1fr;
+    }
+    .menubar{
+      width: 45px;
+    }
+    .menubar h1,.up-nav p{
+      display: none;
+    }
+    .op-content p{
+      display: none;
+    }
   }
-  .store-content .listProduct{
-    grid-template-columns: repeat(3, 1fr);
+  /* mobile */
+  @media only screen and (max-width: 767px) {
+    .tt-content .video-frames{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .wrapper{
+      flex-direction: column;
+    }
+    .store-content .listProduct{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .menubar{
+      width: 45px;
+    }
+    .menubar h1,.up-nav p{
+      display: none;
+    }
   }
-  .store-content .detail{
-    grid-template-columns:  40% 1fr;
-  }
-}
-/* mobile */
-@media only screen and (max-width: 767px) {
-  .tt-content .video-frames{
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .store-content .listProduct{
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .detail{
-    text-align: center;
-    grid-template-columns: 1fr;
-  }
-  .detail .image img{
-    width: unset;
-    height: 40vh;
-  }
-  .detail .name{
-    font-size: x-large;
-    margin: 0;
-
-  }
-  .detail .buttons button{
-    font-size: small;
-  }
-  .detail .buttons{
-    justify-content: center;
-  }
-}

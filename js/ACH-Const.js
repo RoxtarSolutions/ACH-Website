@@ -124,6 +124,15 @@ const videos=[
     },
 ]
 
+//Vehicle Details fetch
+var Vehicle = function(VIN, ODO, WTire, Mod, Image) {
+    this.VIN = VIN;
+    this.ODO = ODO;
+    this.WTire = WTire;
+    this.Mod = Mod;
+    this.Image = Image;
+}
+
 // Const for DB
 var User = function(FirstName,LastName,Email,Phone,Username,Password) {
     this.FirstName = FirstName;

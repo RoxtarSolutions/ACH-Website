@@ -4,19 +4,24 @@ $(document).ready(function () {
   populate_video();
   populate_store();
   cart();
+  hiddendivs();
 });
 
 function init() {
-  $('#UserPackages').show();
-  $('#MechanicPackages').hide();
-  $('#WorkshopPackages').hide();
-  $('.cartTab').hide();
   $('.icon-cart').on('click', enable_cart);
-  $('#btnLogin').on('click', User_Login);
-  $('#btnRegister').on('click', User_registration);
+  $('#btnLogin').on('click', frmlogin_Validation);
+  $('#btnRegister').on('click', frmregister_Validation);
+  $('#UP-Vehicles').on('click',()=>{$('.menu-selection').hide();$('#VehicleDetails').show()})
+  $('#btnAddVehicle').on('click',()=>{$('.menu-selection').hide();$('#AddVehicle').show()});
   $('#tt-search').on('input',search_tt);
   $('#store-search').on('input',search_store);
-  $('body').on('pageshow', resetValidation);
+  $('#UserPage').on('pageshow', RememberCheck);
+  $('#btnVehicleAdd').on('click', AddVehicle);
+  $('#btnVehicleCancel').on('click', btnVehicleCancel);
+  $('#addVIN').on('change',addVINDetails);
+  $('#addODO').on('change', addODODetails);
+  $('#addMod').on('change', ModDetails);
+  $('body').on('pageshow', resetPages);
 }
 function initDb(){
   try{
@@ -33,11 +38,19 @@ function initDb(){
   }
 }
 
-function resetValidation(){
+function hiddendivs(){
+  $('#UserPackages').show();
+  $('#MechanicPackages').hide();
+  $('#WorkshopPackages').hide();
+  $('.menu-selection').hide();
+  $('.cartTab').hide();
+}
+function resetPages(){
   $('.validator').hide();
   $('.frmdiv input').removeClass('error').removeClass('valid');
   $('.frmdiv form')[0].reset();
   $('#frmRegister')[0].reset();
+  $('.popuptext').hide();
 }
 function sub_toggle_user(){
   $('#UserPackages').show();
@@ -77,8 +90,8 @@ function populate_store(){
     newProduct.classList.add('item');
     newProduct.id =`${product.name}`;
     newProduct.innerHTML =
-        `<a href="./detail.html?id=${product.id}">
-             <img src="${product.image}">
+        `<a href="" onclick="pdetails(${product.id})">
+             <img src="${product.image}" alt="">
          </a>
          <h2>${product.name}</h2>
          <p class="price">$${product.price}</p>
@@ -86,9 +99,15 @@ function populate_store(){
              class="addCart" 
              data-id='${product.id}'>
                  Add To Cart
-         </button>`;
+         </button>
+        <span class="popuptext" id="myPopup_${product.id}">${product.description}</span>
+        `;
     listProductHTML.appendChild(newProduct);
+    $('.popuptext').hide();
   });
+}
+function pdetails(id){
+    $(`#myPopup_${id}`).toggle();
 }
 function enable_cart(){
   let container = document.querySelector('.store-content')

@@ -19,9 +19,9 @@ var userdb ={
         });
     },
 
-    select: function (options, callback) {
+    selectAll: function (options, callback) {
         db.transaction(function (tx) {
-            var sql = `SELECT * FROM users WHERE id=?`;
+            var sql = `SELECT * FROM users`;
             tx.executeSql(sql, options, callback, errorHandler);
         });
     },
