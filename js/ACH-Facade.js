@@ -1,4 +1,3 @@
-
 const cart = () => {
     let listCartHTML = document.querySelector('.listCart');
     let iconCart = document.querySelector('.icon-cart');
@@ -202,6 +201,7 @@ async function addVINDetails(){
         }
 
     if(vehicleFound){
+
         let vehicle = document.createElement('tbody');
         vehicle.innerHTML =
             `<tr>

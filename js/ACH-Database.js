@@ -28,7 +28,16 @@ var DB = {
                 Username VARCHAR(50),
                 Password VARCHAR(50)
             );`;
+            var addVehicleTable = `CREATE TABLE IF NOT EXISTS Vehicles (
+                VIN VARCHAR(20) PRIMARY KEY,
+                User VARCHAR(100),
+                ODO INTEGER(10),
+                WTire VARCHAR(5),
+                Mod VARCHAR(100),
+                Image TEXT
+            );`;
             tx.executeSql(createUserTable, [], null, errorHandler);
+            tx.executeSql(addVehicleTable, [], null, errorHandler);
         });
     },
 
