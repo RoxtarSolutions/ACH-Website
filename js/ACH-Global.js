@@ -11,16 +11,34 @@ function init() {
   $('.icon-cart').on('click', enable_cart);
   $('#btnLogin').on('click', frmlogin_Validation);
   $('#btnRegister').on('click', frmregister_Validation);
-  $('#UP-Vehicles').on('click',()=>{$('.menu-selection').hide();$('#VehicleDetails').show()})
-  $('#btnAddVehicle').on('click',()=>{$('.menu-selection').hide();$('#AddVehicle').show()});
-  $('#tt-search').on('input',search_tt);
-  $('#store-search').on('input',search_store);
+  $('#UP-Vehicles').on('click',VehicleDetailsPage);
+  $('#UP-History').on('click', HistoryDetails);
+  $('#btnAddVehicle').on('click', btnAddVehicle);
+  $('#tt-search').on('input', search_tt);
+  $('#store-search').on('input', search_store);
+  $('#btnCheckout').on('click', CheckoutPopulate);
+  $('#checkoutPCode').on('change', Pincode);
+  $('#checkoutCard').on('change', CardNumber);
+  $('#checkoutExp').on('change', ExpCard);
+  $('#checkoutCVV').on('change', CVVCard);
+  $('#btnOrder').on('click', frmCheckout);
+  $('#btnCoutCancel').on('click', btnCoutCancel);
   $('#UserPage').on('pageshow', RememberCheck);
   $('#btnVehicleAdd').on('click', AddVehicle);
   $('#btnVehicleCancel').on('click', btnVehicleCancel);
+  $('#btnEditCancel').on('click', btnVehicleCancel);
   $('#addVIN').on('change',addVINDetails);
   $('#addODO').on('change', addODODetails);
+  $('#addWTNo').on('click', WTire);
+  $('#addWTYes').on('click', WTire);
   $('#addMod').on('change', ModDetails);
+  $('#editODO').on('change', editODODetails);
+  $('#editWTNo').on('click', editWTire);
+  $('#editWTYes').on('click', editWTire);
+  $('#editMod').on('change', editModDetails);
+  $('#btnVehicleUpdate').on('click', UpdateVehicle);
+  $('#btnVehicleDelete').on('click', DeleteVehicle);
+  $('#selectVehicle').on('change', Selector);
   $('body').on('pageshow', resetPages);
 }
 function initDb(){

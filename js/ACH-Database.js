@@ -32,7 +32,7 @@ var DB = {
                 VIN VARCHAR(20) PRIMARY KEY,
                 User VARCHAR(100),
                 ODO INTEGER(10),
-                WTire VARCHAR(5),
+                WTire BOOLEAN,
                 Mod VARCHAR(100),
                 Image TEXT
             );`;

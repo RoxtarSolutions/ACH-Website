@@ -65,7 +65,14 @@ var vehicledb ={
         });
     },
 
-    selectUser: function (options, callback) {
+    selectUserVehicle: function (options, callback) {
+        db.transaction(function (tx) {
+            var sql = `SELECT * FROM Vehicles WHERE User=?`;
+            tx.executeSql(sql, options, callback, errorHandler);
+        });
+    },
+
+    selectVINVehicle: function (options, callback) {
         db.transaction(function (tx) {
             var sql = `SELECT * FROM Vehicles WHERE VIN=?`;
             tx.executeSql(sql, options, callback, errorHandler);
@@ -79,10 +86,10 @@ var vehicledb ={
         });
     },
 
-    update:function (user, vehicle) {
+    update:function (vehicle, vin) {
         db.transaction(function (tx) {
-            var sql = `UPDATE vehicle SET VIN=?, ODO=?, WTire=?, Mod=?, Image=? WHERE user=?`;
-            var options = [vehicle.VIN, vehicle.ODO, vehicle.WTire, vehicle.Mod, vehicle.Image, user];
+            var sql = `UPDATE Vehicles SET User=?, ODO=?, WTire=?, Mod=?, Image=? WHERE VIN=?`;
+            var options = [vehicle.User, vehicle.ODO, vehicle.WTire, vehicle.Mod, vehicle.Image, vin];
             function successCallback() {
                 console.info("Success: "+vehicle.VIN+" updated successfully.");
             }
@@ -92,14 +99,12 @@ var vehicledb ={
 
     delete:function (vehicleVIN) {
         db.transaction(function (tx) {
-            var sql = `DELETE FROM Vehicle WHERE VIN=?`;
-            var options = [vehicleVIN];
-
+            var sql = `DELETE FROM Vehicles WHERE VIN=?`;
             function successCallback() {
                 console.info("Success: Vehicle deleted successfully.");
             }
 
-            tx.executeSql(sql, options, successCallback, errorHandler);
+            tx.executeSql(sql, vehicleVIN, successCallback, errorHandler);
         });
     }
 }

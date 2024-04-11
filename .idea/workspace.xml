@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-DAL.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-DAL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-Facade.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Facade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Validations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +52,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/Downloads/InClass4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/OneDrive - Conestoga College/Capstone Project/ACH-Website&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -113,7 +121,22 @@
       <workItem from="1711513553371" duration="3478000" />
       <workItem from="1711554075702" duration="2267000" />
       <workItem from="1711589112287" duration="14022000" />
-      <workItem from="1711653207720" duration="2475000" />
+      <workItem from="1711653207720" duration="11448000" />
+      <workItem from="1711672767789" duration="10442000" />
+      <workItem from="1711735164341" duration="607000" />
+      <workItem from="1711862453940" duration="4147000" />
+      <workItem from="1712080105741" duration="6700000" />
+      <workItem from="1712093875221" duration="18614000" />
+      <workItem from="1712172346486" duration="4152000" />
+      <workItem from="1712183246883" duration="2844000" />
+      <workItem from="1712368230413" duration="593000" />
+      <workItem from="1712590102194" duration="3088000" />
+      <workItem from="1712621136950" duration="17266000" />
+      <workItem from="1712757209272" duration="3773000" />
+      <workItem from="1712773147716" duration="8605000" />
+      <workItem from="1712785350621" duration="5056000" />
+      <workItem from="1712790530354" duration="347000" />
+      <workItem from="1712851327368" duration="4241000" />
     </task>
     <servers />
   </component>

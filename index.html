@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta http-equiv="origin-trial" content="A+Rqg+6S4LCXknM6olsd1w6BMepsNto8bpenot7Nl7Lx5nr/ompLKgfUkJSipdFzMkf+wgLHhjWB4UuSv6vgYAMAAACAeyJvcmlnaW4iOiJodHRwczovL3JveHRhcnNvbHV0aW9ucy5naXRodWIuaW86NDQzIiwiZmVhdHVyZSI6IldlYlNRTCIsImV4cGlyeSI6MTcxNjk0MDc5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+    <meta http-equiv="origin-trial" content="AjlQd1gzqSlgL0m5R6UzX/seK2l6d/hMbVbGovm8B6qc+3TnwuEGUPIH6I4mYzmWZ70latoevq/81DC5oqV6FgQAAABKeyJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjYzMzQyIiwiZmVhdHVyZSI6IldlYlNRTCIsImV4cGlyeSI6MTcxNjk0MDc5OX0=">
     <title>AutoCare Hub</title>
 
 <!--    importing jquery-->
@@ -20,15 +20,23 @@
     <script src="./js/ACH-Database.js"></script>
     <script src="./js/ACH-Facade.js"></script>
     <script src="./js/ACH-Global.js"></script>
-    <script src="js/ACH-Validations.js"></script>
     <script src="js/ACH-Const.js"></script>
+    <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("jig7pZC05n6jG7BOR");
+      })();
+    </script>
   </head>
 <body>
 <!--Front face pages-->
 <div id="HomePage" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
         <div class="acc_icon">
-            <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+            <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
         </div>
         <div class="header-nav row">
           <h1 class="col">AUTOCARE HUB</h1>
@@ -41,8 +49,6 @@
               <li><a href="#Subscription">Subscription</a></li>
               <span>|</span>
               <li><a href="#Store">Store</a></li>
-              <span>|</span>
-              <li><a href="#MechNearMe">Mech Near Me</a></li>
             </ul>
           </div>
         </div>
@@ -60,19 +66,19 @@
             <div class="card-body">
               <div class="wrapperHome">
                 <div class="homecard">
-                  <img src="Images/carIcon.png" alt="user image" style="width:100%">
+                  <img src="Images/carIcon.png" alt="user image">
                   <div class="container">
                     <h4><b>Drivers</b></h4>
                     <p>	The basic user profile allows you to track your vehicles in your profile. 
                       You can record what work has been done to your vehicle and any details about 
-                      the vehicle that you want to provide and then system will prompt you to do basic 
-                      maintenance tasks automatically based on that information. As a user, you can use 
-                      the “get quote” page inside the profile page to send your ticket out to the wider 
+                      the vehicle that you want to provide and then the system will prompt you to do basic 
+                      maintenance tasks automatically based on that information. As a premium user, you can use 
+                      the "Get Quote" page inside the profile page to send your ticket out to the wider
                       market of mechanics and then choose the quote that best matches your expectations.</p>
                   </div>
                 </div> 
                 <div class="homecard">
-                  <img src="Images/wrenchIcon.png" alt="mechanic image" style="width:100%">
+                  <img src="Images/wrenchIcon.png" alt="mechanic image">
                   <div class="container">
                     <h4><b>Mechanics</b></h4>
                     <p>The mechanic profile is a special type of user profile that can provide specific support for users’ 
@@ -82,7 +88,7 @@
                   </div>
                 </div> 
                 <div class="homecard">
-                  <img src="Images/workshopIcon.png" alt="workshop image" style="width:100%">
+                  <img src="Images/workshopIcon.png" alt="workshop image">
                   <div class="container">
                     <h4><b>Workshops</b></h4>
                     <p>	The workshop profile is catered to businesses that want to implement the AutoCare Hub at the 
@@ -117,7 +123,7 @@
 <div id="TTPage" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-            <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+            <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
         </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -130,8 +136,6 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -168,7 +172,7 @@
 <div id="Subscription" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-            <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+            <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
         </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -181,8 +185,6 @@
           <li><a href="#Subscription"><u>Subscription</u></a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -199,7 +201,7 @@
               <a class="nav-link" href="" onclick="sub_toggle_mech()">Mechanic Packages</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="sub_toggle_work()">WorkShop Packages</a>
+              <a class="nav-link" href="" onclick="sub_toggle_work()">Workshop Packages</a>
             </li>
           </ul>
         </div>
@@ -208,32 +210,29 @@
             <div class="card">
               <h3>User Package 1</h3>
               <h1>Free <span></span></h1>
-              <p>For Most Business that want to optimize their web queries.</p>
+              <p>For users that want to keep track of their personal vehicles</p>
               <ul>
-                <li><i class="fa-solid fa-square-check"></i> All limited links</li>
+                <li><i class="fa-solid fa-square-check"></i> Store up to 2 vehicles</li>
                 <li>
-                  <i class="fa-solid fa-square-check"></i> Own Analytics Platform
+                  <i class="fa-solid fa-square-check"></i> Track vehicle maintenance history
                 </li>
-                <li><i class="fa-solid fa-square-check"></i> Chat Support</li>
-                <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
-                <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
+                <li><i class="fa-solid fa-square-check"></i> Set reminders for upcoming maintenance</li>
+                <li><i class="fa-solid fa-square-check"></i></li>
+                <li><i class="fa-solid fa-square-check"></i></li>
               </ul>
-              <a href="">Choose Plan</a>
+              <a href="#RegistrationPage">Choose Plan</a>
             </div>
             <div class="card">
               <h3>User Package 2</h3>
-              <h1>$29 <span>/Month</span></h1>
-              <p>For Most Buisness that want to optimize their web queries.</p>
+              <h1>$14.99 <span>/Month</span></h1>
+              <p>For users that want to keep track of their personal vehicles and get the best deals</p>
               <ul>
-                <li><i class="fa-solid fa-square-check"></i> All limited links</li>
-                <li>
-                  <i class="fa-solid fa-square-check"></i> Own Analytics Platform
-                </li>
-                <li><i class="fa-solid fa-square-check"></i> Chat Support</li>
-                <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
-                <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
+                <li><i class="fa-solid fa-square-check"></i> Store up to 10 vehicles</li>
+                <li><i class="fa-solid fa-square-check"></i> Track vehicle maintenance history</li>
+                <li><i class="fa-solid fa-square-check"></i> Set reminders for upcoming maintenance</li>
+                <li><i class="fa-solid fa-square-check"></i> Effortlessly request quotes from many licensed mechanics all at one time</li>
               </ul>
-              <a href="">Choose Plan</a>
+              <a href="#RegistrationPage">Choose Plan</a>
             </div>
           </div>
         </div>
@@ -248,7 +247,7 @@
               <a class="nav-link active"  aria-current="true" href="" onclick="sub_toggle_mech()">Mechanic Packages</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="sub_toggle_work()">WorkShop Packages</a>
+              <a class="nav-link" href="" onclick="sub_toggle_work()">Workshop Packages</a>
             </li>
           </ul>
         </div>
@@ -267,7 +266,7 @@
                 <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
                 <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
               </ul>
-              <a href="">Choose Plan</a>
+              <a href="#RegistrationPage">Choose Plan</a>
             </div>
             <div class="card">
               <h3>Mechanic Package 2</h3>
@@ -282,7 +281,7 @@
                 <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
                 <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
               </ul>
-              <a href="">Choose Plan</a>
+              <a href="#RegistrationPage">Choose Plan</a>
             </div>
           </div>
         </div>
@@ -316,22 +315,7 @@
                 <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
                 <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
               </ul>
-              <a href="">Choose Plan</a>
-            </div>
-            <div class="card">
-              <h3>Workshop Package 2</h3>
-              <h1>$29 <span>/Month</span></h1>
-              <p>For Most Buisness that want to optimize their web queries.</p>
-              <ul>
-                <li><i class="fa-solid fa-square-check"></i> All limited links</li>
-                <li>
-                  <i class="fa-solid fa-square-check"></i> Own Analytics Platform
-                </li>
-                <li><i class="fa-solid fa-square-check"></i> Chat Support</li>
-                <li><i class="fa-solid fa-square-check"></i> Optimize Hashtags</li>
-                <li><i class="fa-solid fa-square-check"></i> Unlimited Users</li>
-              </ul>
-              <a href="">Choose Plan</a>
+              <a href="#RegistrationPage">Choose Plan</a>
             </div>
           </div>
         </div>
@@ -357,7 +341,7 @@
 <div id="Store" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-            <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+            <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
         </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -370,8 +354,6 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store"><u>Store</u></a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -402,13 +384,7 @@
           <h5 class="col">SubTotal : </h5>
           <h5 class="col-md-auto"></h5>
         </div>
-        <button id="checkOut" onclick="navigateToCheckout()">Check Out</button>
-
-        <script>
-          function navigateToCheckout() {
-            window.location.href = "#CheckoutPage";
-          }
-        </script>
+        <button id="btnCheckout">Check Out</button>
       </div>
   </section>
   <footer data-role="footer" data-theme="b">
@@ -430,7 +406,7 @@
 <div id="CheckoutPage" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-      <a href="#LoginPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+      <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
     </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -443,144 +419,106 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <section data-role="content" style="padding: 20px" class="checkoutColumn">
-    <div class="container checkout-content">
-      <!-- Column for Personal Information and Shipping Address -->
-      <div class="column">
-        <h2>Checkout</h2>
-        <form action="" class="form_Checkout" method="post">
-          <!-- Personal Information -->
-          <fieldset id="P_Info" class="mb-4">
-            <legend>Personal Information</legend>
-            <div class="mb-4">
-              <label for="fullname" class="form-label">Full Name *</label>
-              <input type="text" class="form-control" id="fullname" required>
-            </div>
-            <div class="mb-4">
-              <label for="email" class="form-label">Email *</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-          </fieldset>
-          <!-- Shipping Address -->
-          <fieldset id="S_info" class="mb-4">
-            <legend>Shipping Address</legend>
-            <div class="mb-4">
-              <label for="address1" class="form-label">Address Line 1 *</label>
-              <input type="text" class="form-control" id="address1" required>
-            </div>
-            <div class="mb-4">
-              <label for="address2" class="form-label">Address Line 2</label>
-              <input type="text" class="form-control" id="address2">
-            </div>
-            <div class="mb-4">
-              <label for="city" class="form-label">City *</label>
-              <input type="text" class="form-control" id="city" required>
-            </div>
-            <div class="mb-4">
-              <label for="state" class="form-label">State/Province/Region *</label>
-              <input type="text" class="form-control" id="state" required>
-            </div>
-            <div class="mb-4">
-              <label for="zip" class="form-label">ZIP/Postal Code *</label>
-              <input type="text" class="form-control" id="zip" required>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-      <!-- Column for Payment Details -->
-      <div class="column">
-        <form action="" class="form_Checkout" id="leftForm" method="post">
-          <!-- Payment Details -->
-          <fieldset id="P_Details">
-            <legend>Payment Details</legend>
-            <div class="mb-4">
-              <label for="cardName" class="form-label">Name on Card *</label>
-              <input type="text" class="form-control" name="cardName" id="cardName" required>
-            </div>
-            <div class="mb-4">
-              <label for="cardNumber" class="form-label">Card Number *</label>
-              <input type="text" class="form-control" name="cardNumber" id="cardNumber" required pattern="\\d*">
-            </div>
-            <div class="inline-form-group">
-              <div>
-                <label for="expMonth" class="form-label">Expiry Month *</label>
-                <select name="expMonth" id="expMonth" class="form-control" required>
-                  <option value="">Month</option>
-                  <!-- Add options for months -->
-                </select>
-              </div>
-              <div>
-                <label for="expYear" class="form-label">Expiry Year *</label>
-                <select name="expYear" id="expYear" class="form-control" required>
-                  <option value="">Year</option>
-                  <!-- Add options for years -->
-                </select>
-              </div>
-              <div>
-                <label for="cvv" class="form-label">CVV *</label>
-                <input type="text" class="form-control" name="cvv" id="cvv" required pattern="\\d{3,4}">
-              </div>
-            </div>
-          </fieldset>
-          <!-- Order Summary -->
-          <div class="order-summary">
-            <h3>Order Summary</h3>
-            <!-- Details of the order summary -->
-          </div>
-          <button type="submit" class="checkOut">Complete Purchase</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-
-  <footer data-role="footer" data-position="relative" data-theme="b">
-    <div class="row">
-      <div class="footer-text col align-items-center">
-        <h1>AUTOCARE HUB</h1>
-        <p>&copy; 2024, AutoCare Hub is built and managed by Roxtar Solutions</p>
-      </div>
-      <div class="sm_icon col">
-        <img src="css/lib/images/Instagram.png" />
-        <img src="css/lib/images/Facebook.png" />
-      </div>
-    </div>
-  </footer>
-</div>
-
-<div id="MechNearMe" data-role="page">
-  <header data-role="header" data-position="relative" data-theme="b">
-    <div class="acc_icon">
-      <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
-    </div>
-    <div class="header-nav row">
-      <h1 class="col">AUTOCARE HUB</h1>
-      <div class="navigation col">
-        <ul>
-          <li><a href="#HomePage">Home</a></li>
-          <span>|</span>
-          <li><a href="#TTPage">Tips & Tricks</a></li>
-          <span>|</span>
-          <li><a href="#Subscription">Subscription</a></li>
-          <span>|</span>
-          <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe"><u>Mech Near Me</u></a></li>
         </ul>
       </div>
     </div>
   </header>
   <section data-role="content" style="padding: 0">
-    <div class="container store-content">
-      Page under Development
-      <hr>
-      <div class="listProduct">
+    <div class="container form_content">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-sm-8 rounded p-5 shadow-lg frmdiv">
+          <div class="row text-center justify-content-center mb-4">
+            <h1>Checkout</h1>
+          </div>
+          <form id="frmCheckout">
+              <div class="mb-4">
+                <label for="checkoutFname" class="form-label">First name *</label>
+                <input type="text" class="form-control" id="checkoutFname">
+                <div id="coutfnameValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutLname" class="form-label">Last name *</label>
+                <input type="text" class="form-control" id="checkoutLname">
+                <div id="coutlnameValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutEmail" class="form-label">Email *</label>
+                <input type="text" class="form-control" id="checkoutEmail">
+                <div id="coutemailValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutPhone" class="form-label">Phone *</label>
+                <input type="number" class="form-control" id="checkoutPhone">
+                <div id="coutphoneValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutAddress" class="form-label">Address*</label>
+                <input type="text" class="form-control" id="checkoutAddress">
+                <div id="coutAddressValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutCity" class="form-label">City *</label>
+                <input type="text" class="form-control" id="checkoutCity">
+                <div id="coutCityValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutProvince" class="form-label">Province *</label>
+                <select id="checkoutProvince">
+                  <option value="ab">Alberta</option>
+                  <option value="bc">British Columbia</option>
+                  <option value="mo">Manitoba</option>
+                  <option value="nfl">Newfoundland and Labrador</option>
+                  <option value="nb">New Brunswick</option>
+                  <option value="ns">Nova Scotia</option>
+                  <option value="nt">Northwest Territories</option>
+                  <option value="nu">Nunavut</option>
+                  <option value="on">Ontario</option>
+                  <option value="qc">Quebec</option>
+                  <option value="sk">Saskatchewan</option>
+                  <option value="yk">Yukon</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutPCode" class="form-label">Postal Code *</label>
+                <input type="text" class="form-control" id="checkoutPCode" placeholder="N6N6N6">
+                <div id="coutPCodeValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutcName" class="form-label">Name on Card *</label>
+                <input type="text" class="form-control" id="checkoutcName">
+                <div id="coutcnameValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutCard" class="form-label">Card Number *</label>
+                <input type="text" class="form-control" id="checkoutCard" placeholder="xxxx-xxxx-xxxx-xxxx">
+                <div id="coutCardValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutExp" class="form-label">Exp Date *</label>
+                <input type="text" class="form-control" id="checkoutExp" placeholder="MM/YYYY">
+                <div id="coutExpValid" class="validator"></div>
+              </div>
+              <div class="mb-4">
+                <label for="checkoutCVV" class="form-label">CVV *</label>
+                <input type="number" class="form-control" id="checkoutCVV" placeholder="xxx">
+                <div id="coutCVVValid" class="validator"></div>
+              </div>
+          </form>
+            <h3>Cart Details</h3>
+            <table id="tblCartDetails" class="table">
+              <thead>
+              <th></th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              </thead>
+              <tbody class="item">
+
+              </tbody>
+            </table>
+          <button id="btnOrder" type="button">Order</button>
+          <button id="btnCoutCancel" type="button">Cancel</button>
+        </div>
       </div>
     </div>
   </section>
@@ -604,7 +542,7 @@
 <div id="LoginPage" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-            <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+            <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
         </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -617,8 +555,6 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -671,7 +607,7 @@
 <div id="RegistrationPage" data-role="page">
   <header data-role="header" data-position="relative" data-theme="b">
     <div class="acc_icon">
-      <a href="" onClick="RememberCheck()"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
+      <a href="#UserPage"><img src="css/lib/images/Account-Icon.png" alt="account-logo"></a>
     </div>
     <div class="header-nav row">
       <h1 class="col">AUTOCARE HUB</h1>
@@ -684,8 +620,6 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -776,8 +710,6 @@
           <li><a href="#Subscription">Subscription</a></li>
           <span>|</span>
           <li><a href="#Store">Store</a></li>
-          <span>|</span>
-          <li><a href="#MechNearMe">Mech Near Me</a></li>
         </ul>
       </div>
     </div>
@@ -785,7 +717,7 @@
   <section data-role="content" style="padding: 0">
       <div class="row up-content ">
         <div class="col col-md-2 menubar">
-            <h1>Priyansh</h1>
+            <h1 id="UP-menu-user"></h1>
           <div class="up-nav">
             <div data-role="button" id="UP-Vehicles">
               <img src="./css/lib/images/car.png" alt="">
@@ -817,73 +749,16 @@
               <button type="button" id="btnAddVehicle" data-role="button" data-theme="b" data-icon="plus">Add Vehicle</button>
             </div>
             <div class="op-content">
-              <div class="card mb-2" style="max-width: 35vw">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./Images/User-Images/Default-SUV.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Lamborghini Urus</h5>
-                          <p class="card-text">Coupe SUV</p>
-                          <p class="card-text">2022</p>
-                          <p class="card-text">Yellow</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2" style="max-width: 35vw">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./Images/User-Images/Default-Coupe.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Lamborghini Urus</h5>
-                      <p class="card-text">Coupe SUV</p>
-                      <p class="card-text">2022</p>
-                      <p class="card-text">Yellow</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2" style="max-width: 35vw">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./Images/User-Images/Default-HB.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Lamborghini Urus</h5>
-                      <p class="card-text">Coupe SUV</p>
-                      <p class="card-text">2022</p>
-                      <p class="card-text">Yellow</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2" style="max-width: 35vw">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./Images/User-Images/Default-Sedan.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Lamborghini Urus</h5>
-                      <p class="card-text">Coupe SUV</p>
-                      <p class="card-text">2022</p>
-                      <p class="card-text">Yellow</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
+            <br>
+            <p id="VD_Disclaimer">* All the default images are just to represent your vehicle segments, and are not representing your exact vehicle.<br>* In case you cannot see your vehicle please try refreshing your browser.</p>
           </div>
           <div id="AddVehicle" class="menu-selection">
             <h1 class="display-3 col-md-auto">Add Vehicle</h1>
             <hr>
-            <div class="op-content row">
-              <div class="col">
+            <div class="op-content">
+              <div>
                 <form id="frmAddVehicle">
                   <div class="mb-4"  data-role="fieldcontain">
                     <label for="addVIN" class="form-label">VIN *</label>
@@ -899,7 +774,7 @@
                     <label class="form-label">Winter Tire</label>
                     <fieldset data-role="controlgroup" data-type="horizontal">
                       <label for="addWTNo" class="form-label">No</label>
-                      <input type="radio" name="addWT" id="addWTNo" value="No" checked="checked" >
+                      <input type="radio" name="addWT" id="addWTNo" value="No">
                       <label for="addWTYes" class="form-label">Yes</label>
                       <input type="radio" name="addWT" id="addWTYes" value="yes">
                     </fieldset>
@@ -908,22 +783,89 @@
                     <label for="addMod" class="form-label">Modifications to Vehicle: </label>
                     <textarea name="addMod" id="addMod"></textarea>
                   </div>
-                  <div class="mb-4"  data-role="fieldcontain">
-                    <label for="vehicleimg" class="form-label">Image</label>
-                    <input type="file" id="vehicleimg" name="vehicleimg" accept="image/*">
-                  </div>
+<!--                  <div class="mb-4"  data-role="fieldcontain">-->
+<!--                    <label for="addVehicleImg" class="form-label">Image</label>-->
+<!--                    <input type="file" id="addVehicleImg" accept="image/*" onchange="addVehicleImage(this)">-->
+<!--                  </div>-->
                   <div data-role="controlgroup" data-type="horizontal">
                     <button id="btnVehicleAdd" type="button" class="ui-btn-active">Add Vehicle</button>
                     <button id="btnVehicleCancel" type="button" data-theme="b"> Cancel </button>
                   </div>
                 </form>
               </div>
-              <div id="AddVehicleDetails" class="col">
+              <div id="AddVehicleDetails">
                 <h3>Details</h3>
                 <table id="tblAddDetails" class="table table-dark">
                 </table>
               </div>
             </div>
+          </div>
+          <div id="EditVehicle" class="menu-selection">
+            <h1 class="display-3 col-md-auto">Edit Vehicle</h1>
+            <hr>
+            <div class="op-content">
+              <div>
+                <form id="frmEditVehicle">
+                  <div class="mb-4"  data-role="fieldcontain">
+                    <label for="editVIN" class="form-label">VIN *</label>
+                    <input type="text" class="form-control" id="editVIN">
+                    <div id="editVinValid" class="validator"></div>
+                  </div>
+                  <div class="mb-4"  data-role="fieldcontain">
+                    <label for="editODO" class="form-label">Odometer *</label>
+                    <input type="number" class="form-control" id="editODO" placeholder="KM">
+                    <div id="editODOValid" class="validator"></div>
+                  </div>
+                  <div class="mb-4"  data-role="fieldcontain">
+                    <label class="form-label">Winter Tire</label>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                      <label for="editWTNo" class="form-label">No</label>
+                      <input type="radio" name="editWT" id="editWTNo" value="No">
+                      <label for="editWTYes" class="form-label">Yes</label>
+                      <input type="radio" name="editWT" id="editWTYes" value="yes">
+                    </fieldset>
+                  </div>
+                  <div class="mb-4"  data-role="fieldcontain">
+                    <label for="editMod" class="form-label">Modifications to Vehicle: </label>
+                    <textarea name="editMod" id="editMod"></textarea>
+                  </div>
+<!--                  <div class="mb-4"  data-role="fieldcontain">-->
+<!--                    <label for="editVehicleImg" class="form-label">Image</label>-->
+<!--                    <input type="file" id="editVehicleImg" accept="image/*" >-->
+<!--                  </div>-->
+                  <div data-role="controlgroup" data-type="horizontal">
+                    <button id="btnVehicleUpdate" type="button" class="ui-btn-active"> Update </button>
+                    <button id="btnEditCancel" type="button" data-theme="b"> Cancel </button>
+                    <button id="btnVehicleDelete" type="button" > Delete </button>
+                  </div>
+                </form>
+              </div>
+              <div id="EditVehicleDetails">
+                <h3>Details</h3>
+                <table id="tblEditedDetails" class="table table-dark">
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="History" class="menu-selection">
+            <h1 class="display-3 col-md-auto">History</h1>
+            <hr>
+            <div class="op-content">
+              <div id="HistoryVehicleDetails">
+                <div id="HistoryVehicleSelect" data-role="controlgroup" data-type="horizontal">
+                  <select id="selectVehicle" data-theme="b">
+                    <option value="">Select Vehicle</option>
+                  </select>
+                </div>
+                <br>
+                <table id="tblHistoryDetails" class="table table-dark">
+                </table>
+              </div>
+              <div id="HistoryRecord">
+                <h3>History Record</h3>
+              </div>
+            </div>
+            <br>
           </div>
         </div>
       </div>
