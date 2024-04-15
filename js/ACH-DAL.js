@@ -2,8 +2,8 @@ var userdb ={
 
     insertData: function (user) {
         db.transaction(function (tx) {
-            var sql = `INSERT INTO Users (FirstName, LastName, Email, Phone, Username, Password) VALUES (?, ?, ?, ?, ?, ?)`;
-            var options = [user.FirstName, user.LastName, user.Email, user.Phone, user.Username, user.Password];
+            var sql = `INSERT INTO Users (FirstName, LastName, Email, Phone, Username, Password, Profile) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+            var options = [user.FirstName, user.LastName, user.Email, user.Phone, user.Username, user.Password, user.Profile];
             console.log("added: "+user.Username);
             function successCallback() {
                 console.info("Success: User inserted successfully.");
@@ -28,8 +28,8 @@ var userdb ={
 
     update:function (id, user) {
         db.transaction(function (tx) {
-            var sql = `UPDATE Users SET FirstName=?, LastName=?, Email=?, Phone=?, Username=?, Password=? WHERE id=?`;
-            var options = [user.FirstName, user.LastName, user.Email, user.Phone, user.Username,user.Password, id];
+            var sql = `UPDATE Users SET FirstName=?, LastName=?, Email=?, Phone=?, Username=?, Password=? Profile? WHERE id=?`;
+            var options = [user.FirstName, user.LastName, user.Email, user.Phone, user.Username,user.Password, user.Profile ,id];
             function successCallback() {
                 console.info("Success: "+user.FirstName+" updated successfully.");
             }
@@ -55,8 +55,8 @@ var vehicledb ={
 
     insertData: function (vehicle) {
         db.transaction(function (tx) {
-            var sql = `INSERT INTO Vehicles (VIN, User, ODO, WTire, Mod, Image) VALUES (?, ?, ?, ?, ?, ?)`;
-            var options = [vehicle.VIN, vehicle.User, vehicle.ODO, vehicle.WTire, vehicle.Mod, vehicle.Image];
+            var sql = `INSERT INTO Vehicles (VIN, User, ODO, WTire, Mod) VALUES (?, ?, ?, ?, ?)`;
+            var options = [vehicle.VIN, vehicle.User, vehicle.ODO, vehicle.WTire, vehicle.Mod];
             console.log("added: "+ vehicle.VIN);
             function successCallback() {
                 console.info("Success: Vehicle inserted successfully.");
@@ -86,10 +86,20 @@ var vehicledb ={
         });
     },
 
+    updateODO:function (vehicle, vin) {
+        db.transaction(function (tx) {
+            var sql = `UPDATE Vehicles SET ODO=? WHERE VIN=?`;
+            var options = [vehicle, vin];
+            function successCallback() {
+                console.info("Success: "+ vin +" updated successfully.");
+            }
+            tx.executeSql(sql, options, successCallback, errorHandler);
+        });
+    },
     update:function (vehicle, vin) {
         db.transaction(function (tx) {
-            var sql = `UPDATE Vehicles SET User=?, ODO=?, WTire=?, Mod=?, Image=? WHERE VIN=?`;
-            var options = [vehicle.User, vehicle.ODO, vehicle.WTire, vehicle.Mod, vehicle.Image, vin];
+            var sql = `UPDATE Vehicles SET User=?, ODO=?, WTire=?, Mod=? WHERE VIN=?`;
+            var options = [vehicle.User, vehicle.ODO, vehicle.WTire, vehicle.Mod, vin];
             function successCallback() {
                 console.info("Success: "+vehicle.VIN+" updated successfully.");
             }
@@ -102,6 +112,56 @@ var vehicledb ={
             var sql = `DELETE FROM Vehicles WHERE VIN=?`;
             function successCallback() {
                 console.info("Success: Vehicle deleted successfully.");
+            }
+
+            tx.executeSql(sql, vehicleVIN, successCallback, errorHandler);
+        });
+    }
+}
+
+var historydb ={
+
+    insertData: function (history) {
+        db.transaction(function (tx) {
+            var sql = `INSERT INTO History (User, VIN, ODO, Date, Type, Description) VALUES (?, ?, ?, ?, ?, ?)`;
+            var options = [history.User, history.VIN, history.ODO, history.Date, history.Type, history.Description];
+            function successCallback() {
+                console.info("Success: History inserted successfully.");
+            }
+            tx.executeSql(sql, options, successCallback, errorHandler);
+        });
+    },
+
+    selectHistory: function (options, callback) {
+        db.transaction(function (tx) {
+            var sql = `SELECT * FROM History WHERE VIN=?`;
+            tx.executeSql(sql, options, callback, errorHandler);
+        });
+    },
+
+    selectAll: function (options, callback) {
+        db.transaction(function (tx) {
+            var sql = `SELECT * FROM History`;
+            tx.executeSql(sql, options, callback, errorHandler);
+        });
+    },
+
+    update:function (history, vin) {
+        db.transaction(function (tx) {
+            var sql = `UPDATE History SET User=?, VIN=?, ODO=?, Type=?, Description=? WHERE VIN=?`;
+            var options = [history.User, history.VIN, history.ODO, history.Type, history.Description, vin];
+            function successCallback() {
+                console.info("Success: "+history.VIN+" updated successfully.");
+            }
+            tx.executeSql(sql, options, successCallback, errorHandler);
+        });
+    },
+
+    delete:function (vehicleVIN) {
+        db.transaction(function (tx) {
+            var sql = `DELETE FROM History WHERE VIN=?`;
+            function successCallback() {
+                console.info("Success: History deleted successfully.");
             }
 
             tx.executeSql(sql, vehicleVIN, successCallback, errorHandler);

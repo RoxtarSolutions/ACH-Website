@@ -9,8 +9,18 @@ $(document).ready(function () {
 
 function init() {
   $('.icon-cart').on('click', enable_cart);
+  $('#userNo').on('click', ContactUser);
+  $('#userYes').on('click', ContactUser);
+  $('#btnContactUs').on('click', frmContactUs);
+  $('#contactUser').on('change', ContactUserValidate);
   $('#btnLogin').on('click', frmlogin_Validation);
   $('#btnRegister').on('click', frmregister_Validation);
+  $('#registerEmail').on('change', RegisterEmail);
+  $('#registerCode').on('change', UserVerification);
+  $('#Card').on('change', registerCardNumber);
+  $('#Exp').on('change', registerExpCard);
+  $('#CVV').on('change', registerCVVCard);
+  $('input[name="ProfileType"]').on('click',cardRegisterRequired);
   $('#UP-Vehicles').on('click',VehicleDetailsPage);
   $('#UP-History').on('click', HistoryDetails);
   $('#btnAddVehicle').on('click', btnAddVehicle);
@@ -39,6 +49,11 @@ function init() {
   $('#btnVehicleUpdate').on('click', UpdateVehicle);
   $('#btnVehicleDelete').on('click', DeleteVehicle);
   $('#selectVehicle').on('change', Selector);
+  $('#btnUserAddRecord').on('click', UserAddRecord);
+  $('#addrecordODO').on('change', UserRecordODO);
+  $('#btnAddRecord').on('click', AddRecord);
+  $('#btnUserPrintRecords').on('click', PrintRecord);
+  $('#btnCancelRecord').on('click', btnCancelRecord);
   $('body').on('pageshow', resetPages);
 }
 function initDb(){
@@ -66,7 +81,7 @@ function hiddendivs(){
 function resetPages(){
   $('.validator').hide();
   $('.frmdiv input').removeClass('error').removeClass('valid');
-  $('.frmdiv form')[0].reset();
+  $('#frmLogin')[0].reset();
   $('#frmRegister')[0].reset();
   $('.popuptext').hide();
 }

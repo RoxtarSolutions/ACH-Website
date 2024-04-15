@@ -125,21 +125,30 @@ const videos=[
 ]
 
 //Vehicle Details fetch
-var Vehicle = function(User, VIN, ODO, WTire, Mod, Image) {
+var Vehicle = function(User, VIN, ODO, WTire, Mod) {
     this.User = User;
     this.VIN = VIN;
     this.ODO = ODO;
     this.WTire = WTire;
     this.Mod = Mod;
-    this.Image = Image;
 }
 
+// History Details
+var History = function(User, VIN, ODO, Date, Type, Description){
+    this.User = User;
+    this.VIN = VIN;
+    this.ODO = ODO;
+    this.Date = Date;
+    this.Type = Type;
+    this.Description = Description;
+}
 // Const for DB
-var User = function(FirstName,LastName,Email,Phone,Username,Password) {
+var User = function(FirstName,LastName,Email,Phone,Username,Password,Profile) {
     this.FirstName = FirstName;
     this.LastName = LastName;
     this.Email = Email;
     this.Phone = Phone;
     this.Username = Username;
     this.Password = Password;
+    this.Profile = Profile;
 }

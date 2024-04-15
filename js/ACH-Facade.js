@@ -62,7 +62,9 @@ const cart = () => {
     }
 
     const addCartToCheckOut = () =>{
-        cartDetails.innerHTML = '';
+        try{
+            cartDetails.innerHTML = '';
+        }catch{}
         let subTotal= 0;
         if(cart.length > 0){
             cart.forEach(item => {
@@ -131,6 +133,100 @@ const cart = () => {
     }
     initApp();
 }
+function ContactUser(){
+   if($('#userNo').prop('checked')){
+       $('#contactCheckUser').hide();
+       return false;
+   }else{
+       $('#contactCheckUser').show();
+       return true;
+   }
+}
+function frmContactUs(){
+    let fname = $('#contactFname');
+    let lname = $('#contactLname');
+    let email = $('#contactEmail');
+    let user = $('#contactUser');
+    let details = $('#contactDetails');
+    let valid = true;
+
+    let fnameValid = document.querySelector('#contactFnameValid');
+    let lnameValid = document.querySelector('#contactLnameValid');
+    let emailValid = document.querySelector('#contactEmailValid');
+    let userValid = document.querySelector('#contactUserValid');
+    let detailsValid = document.querySelector('#contactDetailsValid');
+
+    if(fname.val()===""){
+        fname.addClass('error');
+        fnameValid.innerHTML='Required';
+        $('#contactFnameValid').show();
+        valid = false;
+    }
+    if(lname.val()===""){
+        lname.addClass('error');
+        lnameValid.innerHTML='Required';
+        $('#contactLnameValid').show();
+        valid = false;
+    }
+    if(email.val()===""){
+        email.addClass('error');
+        emailValid.innerHTML='Required';
+        $('#contactEmailValid').show();
+        valid = false;
+    }
+    if(details.val()===""){
+        details.addClass('error');
+        detailsValid.innerHTML='Required';
+        $('#contactDetailsValid').show();
+        valid = false;
+    }
+    if(!ContactUser && user.val()===""){
+       user.addClass('error');
+       userValid.innerHTML = 'Required';
+       $('#contactUserValid').show();
+        valid = false;
+    }
+    if(valid){
+        document.querySelector('.sent').innerHTML = "! Your Message has been sent !";
+        setTimeout(function(){
+            document.querySelector('.sent').innerHTML = "";
+        }, 5000);
+        $('#frmContactUs')[0].reset();
+        try{$('#frmContactUs input').removeClass('error');}catch{}
+        $('.validator').hide();
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+}
+function ContactUserValidate(){
+    let user = $('#contactUser');
+    let userValid = document.querySelector('#contactUserValid');
+
+    $('#contactUserValid').hide();
+    user.removeClass('error').removeClass('valid');
+
+    userdb.selectAll([],callback)
+
+    function callback(tx, results){
+        if(results.rows.length===0){
+            user.addClass('error');
+            userValid.innerHTML = 'User not found';
+            $('#contactUserValid').show();
+        }
+        for(let i=0;i< results.rows.length; i++){
+            let data = results.rows[i];
+
+            if(user.val() === data['Username']){
+                user.addClass('valid');
+            }else{
+                user.addClass('error');
+                userValid.innerHTML = 'User not found';
+                $('#contactUserValid').show();
+            }
+        }
+    }
+}
 function frmlogin_Validation(){
     const required = "Required *";
     let username = $('#loginUsername').val();
@@ -197,8 +293,7 @@ function frmlogin_Validation(){
     }
 }
 function frmregister_Validation(){
-    let emailRegex=new RegExp(/[A-Za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/);
-    let phoneRegex = new RegExp(/\d{10}$/);
+    let phoneRegex = new RegExp(/^\d{10}$/);
     let pswdRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_])(?=.{8,}$)");
     let required = "Required";
     let pswdFormat = "Password should contain at least<br>one digit,<br>one lower case,<br>one upper case,<br>( ! @ # $ % & * _ ) <br>any of the 8 special characters mentioned";
@@ -206,10 +301,16 @@ function frmregister_Validation(){
     let fname = $('#registerFname').val();
     let lname = $('#registerLname').val();
     let email = $('#registerEmail').val().toLowerCase();
+    let code = $('#registerCode').val();
     let phone = $('#registerPhone').val();
     let uname = $('#registerUsername').val();
     let pswd = $('#registerPswd').val();
     let cpswd = $('#registerConfirmpswd').val();
+    let cardRequired = cardRegisterRequired();
+    let cname = $('#cName').val();
+    let card = $('#Card').val();
+    let exp = $('#Exp').val();
+    let cvv = $('#CVV').val();
 
     $('.validator').hide();
     $('.frmdiv input').removeClass('error');
@@ -217,16 +318,97 @@ function frmregister_Validation(){
     let fnameValid = document.querySelector('#fnameValid');
     let lnameValid = document.querySelector('#lnameValid');
     let emailValid = document.querySelector('#emailValid');
+    let codeValid = document.querySelector('#CodeValid');
     let phoneValid = document.querySelector('#phoneValid');
     let unameValid = document.querySelector('#unameValid');
     let pswdValid = document.querySelector('#pswdValid');
     let cpswdValid = document.querySelector('#cpswdValid');
+    let cnameValid = document.querySelector('#cnameValid');
+    let cardValid = document.querySelector('#CardValid');
+    let expValid = document.querySelector('#ExpValid');
+    let cvvValid = document.querySelector('#CVVValid');
 
     let options=[];
     userdb.selectAll(options,callback);
 
     function callback(tx, results){
         let valid = true;
+        if(results.rows.length===0){
+            if(fname==null||fname===""){
+                fnameValid.innerHTML=required;
+                $('#registerFname').addClass('error');
+                $('#fnameValid').show();
+                valid = false;
+            }
+
+            if(lname==null||lname===""){
+                lnameValid.innerHTML=required;
+                $('#registerLname').addClass('error');
+                $('#lnameValid').show();
+                valid = false;
+            }
+
+            if(email==null||email===""){
+                emailValid.innerHTML=required;
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid=false;
+            }
+
+            if(code==null||code===""){
+                codeValid.innerHTML=required;
+                $('#registerCode').addClass('error');
+                $('#CodeValid').show();
+                valid=false;
+            }
+
+            if(phone==null||phone===""){
+                phoneValid.innerHTML=required;
+                $('#registerPhone').addClass('error');
+                $('#phoneValid').show();
+                valid = false;
+            }
+            else if(!phoneRegex.test(phone)){
+                phoneValid.innerHTML=`Invalid Phone input`;
+                $('#registerPhone').addClass('error');
+                $('#phoneValid').show();
+                valid = false;
+            }
+
+            if(uname==null||uname===""){
+                unameValid.innerHTML=required;
+                $('#registerUsername').addClass('error');
+                $('#unameValid').show();
+                valid = false;
+            }
+
+            if(pswd==null||pswd===""){
+                pswdValid.innerHTML=required;
+                $('#registerPswd').addClass('error');
+                $('#pswdValid').show();
+                valid = false;
+            }
+            else if(!pswdRegex.test(pswd)){
+                pswdValid.innerHTML=pswdFormat;
+                $('#registerPswd').addClass('error');
+                $('#pswdValid').show();
+                valid = false;
+            }
+
+            if(cpswd==null||cpswd===""){
+                cpswdValid.innerHTML=required;
+                $('#registerConfirmpswd').addClass('error');
+                $('#cpswdValid').show();
+                valid = false;
+            }
+            else if(cpswd!==pswd){
+                cpswdValid.innerHTML=`Password didnt match`;
+                $('#registerConfirmpswd').addClass('error');
+                $('#cpswdValid').show();
+                valid = false;
+            }
+
+        }
         for(let i=0;i< results.rows.length; i++){
             let data = results.rows[i];
 
@@ -250,17 +432,12 @@ function frmregister_Validation(){
                 $('#emailValid').show();
                 valid=false;
             }
-            else if (!emailRegex.test(email)) {
-                emailValid.innerHTML = `Invalid Email format i.e. john@mark.com`;
-                $('#registerEmail').addClass('error');
-                $('#emailValid').show();
-                valid = false;
-            }
-            else if(email===data['Email'].toLowerCase()){
-                emailValid.innerHTML="Email already registered, Please Login";
-                $('#registerEmail').addClass('error');
-                $('#emailValid').show();
-                valid = false;
+
+            if(code==null||code===""){
+                codeValid.innerHTML=required;
+                $('#registerCode').addClass('error');
+                $('#CodeValid').show();
+                valid=false;
             }
 
             if(phone==null||phone===""){
@@ -315,25 +492,252 @@ function frmregister_Validation(){
                 valid = false;
             }
         }
+        if(cardRequired){
+            if(cname==null||cname===""){
+                cnameValid.innerHTML=required;
+                $('#cName').addClass('error');
+                $('#cnameValid').show();
+                valid = false;
+            }
+
+            if(card==null||card===""){
+                cardValid.innerHTML=required;
+                $('#Card').addClass('error');
+                $('#CardValid').show();
+                valid = false;
+            }
+
+            if(exp==null||exp===""){
+                expValid.innerHTML=required;
+                $('#Exp').addClass('error');
+                $('#ExpValid').show();
+                valid = false;
+            }
+
+            if(cvv==null||cvv===""){
+                cvvValid.innerHTML=required;
+                $('#CVV').addClass('error');
+                $('#CVVValid').show();
+                valid = false;
+            }
+        }
         if(valid){
+            let profile = ""
+            if($('#user01').prop('checked')){
+                profile = $('#user01').val();
+            }else if($('#user02').prop('checked')){
+                profile = $('#user02').val();
+            }else if($('#mech01').prop('checked')){
+                profile = $('#mech01').val();
+            }else if($('#mech02').prop('checked')){
+                profile = $('#mech02').val();
+            }
+
             let FirstName = $("#registerFname").val();
             let LastName = $("#registerLname").val();
             let Email = $("#registerEmail").val();
             let Phone = $("#registerPhone").val();
             let Username = $("#registerUsername").val();
             let Password = $("#registerPswd").val();
-            var userData = new User(FirstName, LastName, Email, Phone, Username, Password);
+            let Profile = profile;
+
+            var userData = new User(FirstName, LastName, Email, Phone, Username, Password, Profile);
             userdb.insertData(userData);
             $.mobile.changePage($('#LoginPage'));
+
         }
     }
+}
+function RegisterEmail(){
+    let emailRegex=new RegExp(/[A-Za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/);
+    let email = $('#registerEmail').val().toLowerCase();
+    let emailValid = document.querySelector('#emailValid');
+
+    $('#emailValid').hide();
+    $('#registerEmail').removeClass('error').removeClass('valid');
+
+    userdb.selectAll([],callback);
+    function callback(tx, results){
+        let valid = true;
+        if(results.rows.length === 0){
+            if(email==null||email===""){
+                emailValid.innerHTML=`Required`;
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid=false;
+            }
+            else if (!emailRegex.test(email)) {
+                emailValid.innerHTML = `Invalid Email format i.e. john@mark.com`;
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid = false;
+            }
+        }
+        for(let i=0;i< results.rows.length; i++) {
+            let data = results.rows[i];
+            if(email==null||email===""){
+                emailValid.innerHTML=`Required`;
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid=false;
+            }
+            else if (!emailRegex.test(email)) {
+                emailValid.innerHTML = `Invalid Email format i.e. john@mark.com`;
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid = false;
+            }
+            else if(email===data['Email'].toLowerCase()){
+                emailValid.innerHTML="Email already registered, Please Login";
+                $('#registerEmail').addClass('error');
+                $('#emailValid').show();
+                valid = false;
+            }
+        }
+        if(valid){
+
+            let code = Math.floor(100000 + Math.random() * 900000);
+            let encrypted  = window.btoa(code);
+
+            const serviceID = "service_roxtarsolutions";
+            const templateID = "verify-temp";
+
+            var params = {
+                name: $('#registerFname').val(),
+                email: email,
+                verifycode : code
+            };
+
+            emailjs.send(serviceID, templateID, params)
+                .then(res=>{
+                    emailValid.innerHTML=`Verfication Code Sent`;
+                    $('#registerEmail').addClass('valid');
+                    $('#emailValid').show();
+                    sessionStorage.setItem('code', encrypted);
+                })
+                .catch(err=>console.log(err));
+        }
+    }
+}
+function UserVerification(){
+    let code = window.atob(sessionStorage.getItem('code'));
+    let value = $('#registerCode');
+    let valid = document.querySelector('#CodeValid');
+
+    $('#CodeValid').hide();
+    value.removeClass('error').removeClass('valid');
+
+    if(value.val()===""){
+        valid.innerHTML = 'Required';
+        value.addClass('error');
+        $('#CodeValid').show();
+    }
+    else if( code === value.val()){
+        value.addClass('valid');
+        sessionStorage.removeItem('code');
+    }else{
+        valid.innerHTML = 'Invalid Code';
+        value.addClass('error');
+        $('#CodeValid').show();
+    }
+}
+function cardRegisterRequired(){
+    let notRequired = $('#user01').prop('checked');
+    if(!notRequired){
+        $('.cardRegister').show();
+        return true;
+    }else{
+        $('.cardRegister').hide();
+        return false;
+    }
+}
+function registerCardNumber(){
+    $('#CardValid').hide();
+    let cardnum = $('#Card');
+        cardnum.removeClass('error').removeClass('valid');
+    let cardValid = document.querySelector('#CardValid');
+    let visaregex = new RegExp(/^4[0-9]{15}?$/);
+    let mcregex = new RegExp(/^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/);
+    let americanregex = new RegExp(/^3[47][0-9]{13}$/);
+    let number = new String(`${cardnum.val()}`);
+    number = number[12]+number[13]+number[14]+number[15]
+    if (visaregex.test(cardnum.val())){
+        cardnum.addClass('valid');
+        cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/visa.png">';
+        $('#CardValid').show();
+    }else if(mcregex.test(cardnum.val())){
+        cardnum.addClass('valid');
+        cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/mcard.png">';
+        $('#CardValid').show();
+    }else if(americanregex.test(cardnum.val())){
+        cardnum.addClass('valid');
+        cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/amex.png">';
+        $('#CardValid').show();
+    }else {
+        cardnum.addClass('error');
+        cardValid.innerHTML='Invalid Card Number';
+        $('#CardValid').show();
+    }
+
+
+}
+function registerExpCard(){
+    $('#ExpValid').hide();
+    let exp = $('#Exp');
+        exp.removeClass('error').removeClass('valid');
+    let expValid = document.querySelector('#ExpValid');
+    let expregex = new RegExp(/^(0[1-9]|1[0-2])\/([0-9]{4})$/);
+    let month = 0;
+    let year = 0
+
+    if(!expregex.test(exp.val())){
+        exp.addClass('error');
+        expValid.innerHTML='Invalid Expiry Date';
+        $('#ExpValid').show();
+    }else{
+        month = exp.val().split('/')[0];
+        year = exp.val().split('/')[1];
+    }
+
+    var fullDate = new Date();
+    var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+    var currentDate = [fullDate.getDate(),parseFloat(twoDigitMonth),fullDate.getFullYear()];
+
+    if(month < currentDate[1] && year <= currentDate[2]){
+        exp.addClass('error');
+        expValid.innerHTML='Invalid Expiry Date';
+        $('#ExpValid').show();
+    }else{
+        exp.addClass('valid');
+    }
+}
+function registerCVVCard(){
+    $('#CVVValid').hide();
+    let cvv = $('#CVV');
+        cvv.removeClass('error').removeClass('valid');
+    let cvvValid = document.querySelector('#CVVValid');
+
+    if(cvv.val().length > 3 ||cvv.val().length < 3 ){
+        cvv.addClass('error');
+        cvvValid.innerHTML = 'Invalid CVV';
+        $('#CVVValid').show();
+    }else{
+        cvv.addClass('valid');
+    }
+
 }
 function frmCheckout(){
     let required = 'Required';
     let emailRegex=new RegExp(/[A-Za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/);
-    let phoneRegex = new RegExp(/\d{10}$/);
+    let phoneRegex = new RegExp(/^\d{10}$/);
     let productsDetails="";
     let subTotal= 0;
+    var fullDate = new Date();
+    var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+    var date = `${fullDate.getDate()}/${parseFloat(twoDigitMonth)}/${fullDate.getFullYear()}`
 
     $('.validator').hide();
 
@@ -465,12 +869,14 @@ function frmCheckout(){
     }
     else{
         const serviceID = "service_roxtarsolutions";
-        const templateID = "user_temp";
+        const templateID = "order-temp";
 
         var params = {
             name: fname.val(),
             email: email.val(),
             phone : phone.val(),
+            ordernumber : `${fullDate.getDate()}${parseFloat(twoDigitMonth)}${fullDate.getFullYear()}${Math.floor(100000 + Math.random() * 900000)}`,
+            date : `${date}`,
             card : card.val(),
             address : `${address.val()} ${city.val()} ${province.val()} ${pcode.val()}`,
             products : `${productsDetails}`,
@@ -519,14 +925,25 @@ function CardNumber(){
     let americanregex = new RegExp(/^3[47][0-9]{13}$/);
     let number = new String(`${cardnum.val()}`);
         number = number[12]+number[13]+number[14]+number[15]
-    if (visaregex.test(cardnum.val())||mcregex.test(cardnum.val())||americanregex.test(cardnum.val())){
+    if (visaregex.test(cardnum.val())){
         cardnum.addClass('valid');
         cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/visa.png">';
+        $('#coutCardValid').show();
+    }else if(mcregex.test(cardnum.val())){
+        cardnum.addClass('valid');
+        cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/mcard.png">';
+        $('#coutCardValid').show();
+    }else if(americanregex.test(cardnum.val())){
+        cardnum.addClass('valid');
+        cardnum.val(`XXXX-XXXX-XXXX-${number}`);
+        cardValid.innerHTML='<img src="../css/lib/images/amex.png">';
+        $('#coutCardValid').show();
     }else {
         cardnum.addClass('error');
         cardValid.innerHTML='Invalid Card Number';
-        $('#coutCardValid').show();
-        cardOk = false;
+        $('#CardValid').show();
     }
 
     return cardOk
@@ -624,7 +1041,6 @@ function RememberCheck(){
     if(login === "true"){
         $.mobile.changePage($('#UserPage'));
         VehicleDetailsPage();
-        console.log('login');
     }else if(remember==="true"){
         $.mobile.changePage($('#UserPage'));
         VehicleDetailsPage();
@@ -692,8 +1108,8 @@ async function addVINDetails(){
 
     if(vehicleFound){
 
-        let options=[sessionStorage.getItem('Username')];
-        vehicledb.selectUserVehicle(options,callback);
+        let options=[vin];
+        vehicledb.selectVINVehicle(options,callback);
         function callback(tx, results){
             let valid = true;
             for(let i=0;i< results.rows.length; i++) {
@@ -881,15 +1297,20 @@ function btnVehicleCancel(){
         document.querySelector('#tblAddDetails tbody').innerHTML = ``;
         document.querySelector('#tblEditedDetails tbody').innerHTML = ``;
     }catch{}
-    $('.menu-selection').hide();
-    $('#VehicleDetails').show();
+    VehicleDetailsPage();
 }
 //Vehicle Page
 function VehicleDetailsPage(){
     $('.menu-selection').hide();
     let cards = document.querySelector('.op-content');
     cards.innerHTML='';
-    let options=[sessionStorage.getItem('Username')];
+    let options ="";
+    if(sessionStorage.getItem('Username')){
+        options=[sessionStorage.getItem('Username')];
+    }else{
+        options=[localStorage.getItem('Username')];
+    }
+
     vehicledb.selectUserVehicle(options,callback);
     userdb.selectUser(options, callback2)
     async function callback(tx, results){
@@ -914,7 +1335,7 @@ function VehicleDetailsPage(){
                 }else if(Coupe.test(body)){
                     body='Coupe';
                 }else if(Convertable.test(body)){
-                    body='Convertable';
+                    body='Coupe';
                 }
 
                 let card = document.createElement('div');
@@ -1044,6 +1465,7 @@ async function editVINDetails(){
     }
 }
 function editODODetails(){
+    let vin = $('#editVIN').val();
     let editODO = $('#editODO');
     let editODOValid = $('#editODOValid');
 
@@ -1055,29 +1477,35 @@ function editODODetails(){
     let editODOrow = document.querySelector('#editODOrow');
     let regexp = /^\d{8}$/;
 
+    vehicledb.selectVINVehicle([vin], callback);
+    function callback(tx, result) {
+        try {
+            let odo = result.rows[0]['ODO'];
 
-    if(ODO==="") {
-        document.querySelector('#editODOValid').innerHTML = 'Required';
-        editODO.addClass('error');
-        editODOValid.show();
-        if (Details.contains(editODOrow)) {
-            Details.removeChild(editODOrow);
-        }
-    } else if (regexp.test(ODO)) {
-            document.querySelector('#editODOValid').innerHTML = 'Invalid Input';
-            editODO.addClass('error');
-            editODOValid.show();
-            if (Details.contains(editODOrow)) {
-                Details.removeChild(editODOrow);
-            }
-    } else {
-            if (editODOrow == null) {
-                Details.innerHTML += `<tr id="editODOrow"><th scope="row">ODO</th><td>${ODO} KM</td></tr>`;
-                editODO.addClass('valid');
+            if (ODO === "") {
+                document.querySelector('#editODOValid').innerHTML = 'Required';
+                editODO.addClass('error');
+                editODOValid.show();
+            } else if (regexp.test(ODO)) {
+                document.querySelector('#editODOValid').innerHTML = 'Invalid Input';
+                editODO.addClass('error');
+                editODOValid.show();
+            } else if (ODO < odo) {
+                document.querySelector('#editODOValid').innerHTML = 'New ODO cannot be less than current ODO';
+                editODO.addClass('error');
+                editODOValid.show();
             } else {
-                editODOrow.innerHTML = `<th scope="row">ODO</th><td>${ODO} KM</td>`;
-                editODO.addClass('valid');
+                if (editODOrow == null) {
+                    Details.innerHTML += `<tr id="editODOrow"><th scope="row">ODO</th><td>${ODO} KM</td></tr>`;
+                    editODO.addClass('valid');
+                } else {
+                    editODOrow.innerHTML = `<th scope="row">ODO</th><td>${ODO} KM</td>`;
+                    editODO.addClass('valid');
+                }
             }
+
+        } catch {
+        }
     }
 
 }
@@ -1149,7 +1577,7 @@ function HistoryDetails(){
     Selector.empty();
     let options=[sessionStorage.getItem('Username')];
     vehicledb.selectUserVehicle(options,callback);
-    let option = `<option value="">Select Vehicle</option>` ;
+    let option = `<option value="" selected="selected">Select Vehicle</option>` ;
     async function callback(tx, results){
         for(let i=0;i< results.rows.length; i++) {
             try {
@@ -1161,6 +1589,12 @@ function HistoryDetails(){
             }
         }
         Selector.append(option);
+        try{
+            document.querySelector('#selectVehicle-button span').innerHTML="Select Vehicle";
+        }catch{}
+
+        document.querySelector('#tblHistoryDetails').innerHTML='';
+        document.querySelector('#HistoryRecord').innerHTML =``;
         $('#History').show();
     }
 }
@@ -1168,34 +1602,39 @@ async function Selector(){
     let vin =  $('#selectVehicle').val();
     let Details = document.querySelector('#tblHistoryDetails');
     Details.innerHTML=``;
+    let Record = document.querySelector('#HistoryRecord');
+    Record.innerHTML =``;
     let odo;
     let wtire;
     let mod;
     let data;
+        if(vin !== ""){
+            const res = await fetch(`https://auto.dev/api/vin/${vin}?apikey=ZrQEPSkKcHJpeWFuc2hwY0BnbWFpbC5jb20=`)
+            data = await res.json();
 
-    const res = await fetch(`https://auto.dev/api/vin/${vin}?apikey=ZrQEPSkKcHJpeWFuc2hwY0BnbWFpbC5jb20=`)
-    data = await res.json();
-
-    vehicledb.selectVINVehicle([vin], callback);
-    function callback(tx,result){
-        let dbdata = result.rows[0];
-        odo = dbdata['ODO'];
-        if(dbdata['WTire']==='true'){
-            wtire = 'Yes';
-        }else{
-            wtire = 'No';
-        }
-        mod = dbdata['Mod'];
-
-        let vehicle = document.createElement('tbody');
-        vehicle.innerHTML =`
+            vehicledb.selectVINVehicle([vin], callback);
+            function callback(tx,result){
+                let dbdata = result.rows[0];
+                odo = dbdata['ODO'];
+                if(dbdata['WTire']==='true'){
+                    wtire = 'Yes';
+                }else{
+                    wtire = 'No';
+                }
+                mod = dbdata['Mod'];
+                let year = "NA";
+                try{
+                    year = data.years[0].year;
+                }catch {}
+                let vehicle = document.createElement('tbody');
+                vehicle.innerHTML =`
                 <tr>
                     <th scope="row">VIN</th>
                     <td>${vin}</td>
                 </tr>
                 <tr>
                      <th scope="row">Year</th>
-                     <td>${data.years[0].year}</td>
+                     <td>${year}</td>
                  </tr>
                  <tr>
                      <th scope="row">Make</th>
@@ -1219,7 +1658,212 @@ async function Selector(){
                 </tr>
                  
         `;
-        Details.appendChild(vehicle);
+
+                Details.appendChild(vehicle);
+            }
+
+            historydb.selectHistory([vin], callback2);
+            function callback2(tx, results){
+                for(let i=0;i< results.rows.length; i++) {
+                    try{
+                        let data = results.rows[i];
+                        let date = data['Date'];
+                        let recorder = data['User'];
+                        let odo = data['ODO'];
+                        let type = data['Type'];
+                        let des = data['Description'];
+
+                        let card= document.createElement('div');
+                        card.classList.add('card');
+                        card.innerHTML += `
+                          <div class="card-body">
+                            <table class="table">
+                              <tbody>
+                                    <tr><th>Date: </th><td>${date}</td></tr>
+                                    <tr><th>Recorded By: </th><td>${recorder}</td></tr>
+                                    <tr><th>ODO: </th><td>${odo} KM</td></tr>
+                                    <tr><th>Job Type: </th><td>${type}</td></tr>
+                                    <tr><th>Job Details: </th><td>${des}</td></tr>
+                              </tbody>
+                            </table>
+                          </div>
+                `;
+                        Record.appendChild(card);
+                    }catch{}
+                }
+            }
+        }
+
+}
+function UserAddRecord(){
+    let vin = $('#selectVehicle').val();
+
+    vehicledb.selectVINVehicle([vin], callback);
+    function callback(tx, result){
+        try{
+           let  odo = result.rows[0]['ODO'];
+            $('#addrecordODO').val(odo).addClass('valid');
+        }catch{}
+    }
+    if(vin === ""){
+        console.log('select vehicle');
+    }else{
+        $('#recordVin').val(vin).prop('disabled', true).addClass('valid');
+        $('.menu-selection').hide();
+        $('#UserAddRecord').show()
     }
 }
+function btnCancelRecord(){
+    $('#frmUserAddRecord')[0].reset();
+    $('.validator').hide();
+    Selector();
+    $('.menu-selection').hide();
+    $('#History').show();
+}
+function UserRecordODO(){
+    let vin = $('#recordVin').val();
+    let recordODO =  $('#addrecordODO');
+    let odoValid = document.querySelector('#addrecordODOValid');
 
+    recordODO.removeClass('valid').removeClass('error');
+    $('#addrecordODOValid').hide();
+
+    vehicledb.selectVINVehicle([vin], callback);
+    function callback(tx, result){
+        try{
+            let  odo = result.rows[0]['ODO'];
+
+            if (recordODO.val()===""){
+                recordODO.addClass('error');
+                odoValid.innerHTML = 'Required';
+                $('#addrecordODOValid').show();
+            }else if(recordODO.val()< odo){
+                recordODO.addClass('error');
+                odoValid.innerHTML = 'New ODO cannot be less than current ODO';
+                $('#addrecordODOValid').show();
+            }else {
+                recordODO.addClass('valid');
+            }
+
+        }catch{}
+    }
+
+}
+function AddRecord(){
+    let valid = true;
+    let type = "";
+    if(document.querySelector('#addrecordODO').classList.contains('error')){
+        valid = false;
+    }
+
+    $('#addrecordTypeValid').hide();
+    $('#addrecordDesValid').hide();
+
+    if($('#OilChange').prop('checked')){
+        type += 'Oil Change, '
+    }
+    if($('#Inspection').prop('checked')){
+        type += 'Inspection, '
+    }
+    if($('#Tire').prop('checked')){
+        type += 'Tire, '
+    }
+    if($('#Mechanical').prop('checked')){
+        type += 'Mechanical, '
+    }
+    if($('#Electronics').prop('checked')){
+        type += 'Electronics, '
+    }
+    if($('#Other').prop('checked')){
+        type += 'Other'
+    }
+
+    if(type === ""){
+        document.querySelector('#addrecordTypeValid').innerHTML = 'Please select one of the following option';
+        $('#addrecordTypeValid').show();
+        valid = false;
+    }
+
+    if($('#addrecordDescription').val()===""){
+        document.querySelector('#addrecordDesValid').innerHTML = 'Required';
+        $('#addrecordDesValid').show();
+        valid = false;
+    }
+
+    if(valid){
+        let vin = $('#recordVin').val();
+        let user = sessionStorage.getItem('Username');
+        let recordODO =  $('#addrecordODO').val();
+        let description = $('#addrecordDescription').val();
+        var fullDate = new Date();
+        var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+        var date = `${fullDate.getDate()}/${parseFloat(twoDigitMonth)}/${fullDate.getFullYear()}`
+        vehicledb.updateODO(recordODO,vin);
+
+        userdb.selectUser([user], callback);
+        function callback (tx, result){
+            let profile = result.rows[0]['Profile'];
+            let mechanic = `${result.rows[0]['FirstName']} ${result.rows[0]['LastName']}`
+            if (profile === "user01" || profile === "user02"){
+                let User = "Owner";
+                let VIN = vin;
+                let ODO = recordODO;
+                let Date = date;
+                let Type = type;
+                let Description = description;
+                let historyData = new History(User, VIN, ODO, Date, Type, Description);
+                historydb.insertData(historyData);
+                $('#frmUserAddRecord')[0].reset();
+                $('.validator').hide();
+                Selector();
+                $('.menu-selection').hide();
+                $('#History').show();
+            }else{
+                let User = `Mechanic : ${mechanic}`;
+                let VIN = vin;
+                let ODO = recordODO;
+                let Date = date;
+                let Type = type;
+                let Description = description;
+                let historyData = new History(User, VIN, ODO, Date, Type, Description);
+                historydb.insertData(historyData);
+                $('#frmUserAddRecord')[0].reset();
+                $('.validator').hide();
+                Selector();
+                $('.menu-selection').hide();
+                $('#History').show();
+            }
+        }
+
+    }
+}
+function PrintRecord(){
+    let selectedVehicle = $('#selectVehicle').val();
+
+    if(selectedVehicle !== ""){
+
+        let vehicle = document.querySelector('.printVehicle').innerHTML
+        let record = document.querySelector('.historyDetails').innerHTML;
+        var a = window.open('', '', 'height=720, width=1270');
+        a.document.write(`
+        <html>
+        <head>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </head>
+        <body class="container">
+        <br>
+        <h1 style="text-align: center">Auto Care Hub</h1>
+        <h3 style="text-align: center">Vehicle History Report</h3>
+        <br>
+        ${vehicle}
+        <br>
+        ${record}
+        </body>
+        </html>
+        `);
+        a.document.close();
+        a.print();
+    }
+
+}

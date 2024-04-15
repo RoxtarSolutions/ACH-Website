@@ -6,17 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c2701084-7eaa-462c-acf1-7cb8e06b7abe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/User-Images/Default-HB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/carIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/workshopIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/wrenchIcon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/StyleSheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/lib/images/MasterCard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/lib/images/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/css/lib/images/visa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ACH-Const.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Const.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-DAL.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-DAL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-Database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-Facade.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Facade.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ACH-Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ACH-Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ACH-Validations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/OneDrive - Conestoga College/Capstone Project/ACH-Website&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/priya/Desktop/Assignment 1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -136,7 +138,22 @@
       <workItem from="1712773147716" duration="8605000" />
       <workItem from="1712785350621" duration="5056000" />
       <workItem from="1712790530354" duration="347000" />
-      <workItem from="1712851327368" duration="4241000" />
+      <workItem from="1712851327368" duration="4661000" />
+      <workItem from="1712860250918" duration="247000" />
+      <workItem from="1712861736289" duration="2823000" />
+      <workItem from="1712865832648" duration="348000" />
+      <workItem from="1712866275716" duration="20000" />
+      <workItem from="1712869452534" duration="1004000" />
+      <workItem from="1712871847813" duration="3099000" />
+      <workItem from="1712883175104" duration="4147000" />
+      <workItem from="1712887422787" duration="5855000" />
+      <workItem from="1712942435520" duration="9797000" />
+      <workItem from="1712959412580" duration="276000" />
+      <workItem from="1712978074330" duration="32854000" />
+      <workItem from="1713081842574" duration="1181000" />
+      <workItem from="1713109621010" duration="5450000" />
+      <workItem from="1713146805492" duration="8527000" />
+      <workItem from="1713182373090" duration="1898000" />
     </task>
     <servers />
   </component>

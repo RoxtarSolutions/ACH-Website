@@ -106,7 +106,6 @@ footer .row h1{
 footer .row .col p{
   text-align: left;
 }
-
 footer .row .col:last-child{
   text-align: right;
   padding-right: 2%;
@@ -120,41 +119,45 @@ footer .row .col:last-child{
   background-size: cover;
   margin: 0;
   padding: 0;
+  font-family: Poppins, sans-serif;
   overflow: auto;
 }
+.text-block h1{
+  color : #5e1a1a;
+  text-align: center;
+  font-size: 54px;
+  font-weight: bold;
+}
 .text-block{
+  font-size: 20px;
+  font-weight: 600;
   position: inherit;
   width: 80vw;
-  margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ffffffad;
+  margin: 10% auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  text-shadow: none;
   color: black;
   padding:20px 20px;
   word-break: break-word;
   border-radius: 10px;
 }
-/*handles the styling for the different cards inside the home page.*/
 .wrapperHome{
   display:flex;
   justify-content: space-around;
   flex-direction: row;
+  text-align: center;
   gap: 10px;
   flex-wrap: wrap;
-
 }
 .wrapperHome .homecard{
+  font-size: 16px;
   max-width: 300px;
-  background-color: #ffffff7a;
-  font-family: Poppins, sans-serif;
   padding: 10px;
   margin: 10px 10px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
-  3px 3px 10px -1px rgba(255,255,255,0.7);
 }
 .wrapperHome .homecard img{
   width: 50%;
+  padding-bottom: 5%;
 }
 
 
@@ -514,7 +517,12 @@ background-color: #2c1b1b;;
 
 
 /*Login Page and Registration Page*/
-#LoginPage section, #RegistrationPage section{
+#frmRegister{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15px;
+}
+#LoginPage section, #RegistrationPage section, #ContactUs section{
   background-image: url("../Images/Login-bg.jpg");
   background-size: cover;
 }
@@ -566,12 +574,28 @@ background-color: #2c1b1b;;
 #frmRegister .col:first-child{
   margin-right:5%;
 }
-
+#frmRegister .cardRegister{
+  display :none;
+}
 .validator{
   color:darkred;
   font-size: 12px;
   font-weight: bold;
   margin-left:1%;
+}
+.sent{
+  color:darkgreen;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.validator img{
+  height : 18px
+}
+
+/*Contact Us*/
+#contactCheckUser{
+  display: none
 }
 
 /*UserPage*/
@@ -656,7 +680,7 @@ background-color: #2c1b1b;;
   padding:4px 0;
   margin:0;
 }
-#VD_Disclaimer{
+.Disclaimer{
   text-align: center;
   font-family: Poppins, sans-serif;
   font-size: 14px;
@@ -667,28 +691,28 @@ background-color: #2c1b1b;;
   margin-left:50px;
   margin-top:10px;
 }
-#frmAddVehicle,#frmEditVehicle{
+#frmAddVehicle,#frmEditVehicle, #frmUserAddRecord{
   padding:2vh 2vw;
   margin:0;
   color: black;
   text-shadow: none;
   font-family: Poppins, sans-serif;
 }
-#frmAddVehicle label, #frmEditVehicle label{
+#frmAddVehicle label, #frmEditVehicle label, #frmUserAddRecord label{
   font-weight: bold;
 }
-#AddVehicleDetails,#EditVehicleDetails, #HistoryVehicleDetails{
+#AddVehicleDetails,#EditVehicleDetails, #HistoryVehicleDetails, #AddRecordDetails{
   padding:2vh 2vw;
   margin:0;
   color: black;
   text-shadow: none;
   font-family: Poppins, sans-serif;
 }
-#AddVehicleDetails h3, #EditVehicleDetails h3, #HistoryRecord h3{
+#AddVehicleDetails h3, #EditVehicleDetails h3, .HistoryDetails h3, #AddRecordDetails h3{
   text-align: center;
   font-weight: bold;
 }
-#frmAddVehicle .validator, #frmEditVehicle .validator{
+#frmAddVehicle .validator, #frmEditVehicle .validator, #frmUserAddRecord .validator{
   text-align: right;
 }
 #HistoryVehicleSelect{
